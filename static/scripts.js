@@ -37,19 +37,24 @@ function showSlides(n, no) {
 
   // Before starting the transition, make all images visible
   slides.forEach((slide) => {
-    slide.style.visibility = "visible";
+    //slide.style.visibility = "visible";
+    slide.classList.add('active');
   });
 
   // Apply the transform to slide the images
   let translateX = -(slideIndices[no] - 1) * 100;
   slidesContainer.style.transform = `translateX(${translateX}%)`;
 
+  // Trigger fade out
+  slides.forEach((slide, index) => {
+    if (index + 1 !== slideIndices[no])
+      slide.classList.remove('active');
+    //slide.style.visibility = (index + 1 === slideIndices[no]) ? "visible" : "hidden";
+  });
+
   // Event listener for transition end
   function transitionEndHandler() {
     // After the transition, hide all slides except the current one
-    slides.forEach((slide, index) => {
-      slide.style.visibility = (index + 1 === slideIndices[no]) ? "visible" : "hidden";
-    });
     // Remove this event listener
     slidesContainer.removeEventListener('transitionend', transitionEndHandler);
   }
