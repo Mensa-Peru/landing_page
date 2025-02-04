@@ -28,12 +28,33 @@ function plusSlides(n, no) {
 
 // Show slides function
 function showSlides(n, no) {
+  let slidesContainer = document.getElementById(slideId[no]);
   let slides = document.querySelectorAll(`#${slideId[no]} img`);
-  if (n > slides.length) { slideIndices[no] = 1; }
-  if (n < 1) { slideIndices[no] = slides.length; }
-  // Calculate the translateX value
+  let totalSlides = slides.length;
+
+  if (n > totalSlides) { slideIndices[no] = 1; }
+  if (n < 1) { slideIndices[no] = totalSlides; }
+
+  // Before starting the transition, make all images visible
+  slides.forEach((slide) => {
+    slide.style.visibility = "visible";
+  });
+
+  // Apply the transform to slide the images
   let translateX = -(slideIndices[no] - 1) * 100;
-  document.querySelector(`#${slideId[no]}`).style.transform = `translateX(${translateX}%)`;
+  slidesContainer.style.transform = `translateX(${translateX}%)`;
+
+  // Event listener for transition end
+  function transitionEndHandler() {
+    // After the transition, hide all slides except the current one
+    slides.forEach((slide, index) => {
+      slide.style.visibility = (index + 1 === slideIndices[no]) ? "visible" : "hidden";
+    });
+    // Remove this event listener
+    slidesContainer.removeEventListener('transitionend', transitionEndHandler);
+  }
+
+  slidesContainer.addEventListener('transitionend', transitionEndHandler);
 }
 
 // Automatic slideshow with 5-second interval

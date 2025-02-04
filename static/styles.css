@@ -15,11 +15,6 @@ body {
   line-height: 1.6;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 /* Navigation Bar */
 nav {
   position: fixed;
@@ -98,6 +93,12 @@ nav {
   width: 100%
 }
 
+.content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .slider-container, .text {
   flex: 1;
   padding: 20px;
@@ -105,8 +106,8 @@ nav {
 
 /* Slider Styles */
 .slider-container {
-  max-width: 800px; /* Set a fixed width */
-  max-height: 600px; /* Set a fixed height */
+  width: 800px;
+  height: 600px;
   overflow: hidden;
 }
 
@@ -123,10 +124,12 @@ nav {
   height: 100%;
 }
 
+/* Slider Images */
 .slides img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures images cover the container without stretching */
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover; /* Scales the image while maintaining aspect ratio */
+  object-position: center;
 }
 
 /* Navigation Arrows */
@@ -205,8 +208,7 @@ footer {
   text-decoration: none;
 }
 
-.footer-content .links a:hover,
-.footer-content .social-media a:hover {
+.footer-content .links a:hover {
   text-decoration: underline;
 }
 
