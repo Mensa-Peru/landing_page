@@ -1,0 +1,203 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  color: #333;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Navigation Bar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #0066cc;
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  margin-right: 30px;
+}
+
+.logo img {
+  height: 60px; /* Adjust the height as needed */
+}
+
+.navbar {
+  list-style-type: none;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
+.section {
+  display: flex;
+  align-items: center;
+  padding: 120px 50px;
+  min-height: 100vh;
+}
+
+.section:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+}
+
+.image, .text {
+  flex: 1;
+  padding: 20px;
+}
+
+.text h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.text p {
+  margin-bottom: 30px;
+  font-size: 1.1em;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #e60000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #cc0000;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.footer-content .links,
+.footer-content .social-media {
+  margin-bottom: 20px;
+}
+
+.footer-content .links a,
+.footer-content .social-media a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+.footer-content .links a:hover,
+.footer-content .social-media a:hover {
+  text-decoration: underline;
+}
+
+.footer-content p {
+  font-size: 0.9em;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .logo img {
+    height: 50px;
+  }
+
+  .navbar li {
+    margin: 0 10px;
+  }
+
+  .section {
+    padding: 100px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 10px 0;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .navbar li {
+    margin: 5px 10px;
+  }
+
+  .section {
+    flex-direction: column;
+    padding: 80px 20px;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .image, .text {
+    padding: 10px;
+  }
+
+  /* Hide logo after scrolling on mobile */
+  .logo {
+    display: none;
+  }
+}
