@@ -98,4 +98,10 @@ window.addEventListener('load', () => {
       document.body.dataset.navbarExpanded = false;
     }
   });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024 && isNavbarExpanded()) {
+      document.body.dataset.navbarExpanded = false;
+    }
+  });
 });
