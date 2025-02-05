@@ -68,3 +68,40 @@ function setTimer(no) {
     plusSlides(1, no);
   }, 5000);
 }
+
+function loadPreloadedStyles() {
+  document.querySelectorAll('link[rel="preload"][as="style"]').forEach(link => {
+    link.rel = 'stylesheet';
+  });
+}
+
+function isNavbarExpanded() {
+  return document.body.dataset.navbarExpanded === 'true';
+}
+
+function toggleMenu() {
+  document.body.dataset.navbarExpanded = !isNavbarExpanded();
+}
+
+window.addEventListener('load', () => {
+  loadPreloadedStyles();
+
+  const menuButton = document.querySelector('.navbar .toggle-button');
+  const navbarOverlay = document.querySelector('.navbar .overlay');
+  const navbar = document.querySelector('.navbar .navbar-content');
+
+  menuButton.addEventListener('click', toggleMenu);
+  navbarOverlay.addEventListener('click', toggleMenu);
+
+  navbar.addEventListener('click', (event) => {
+    if (isNavbarExpanded() && event.target.closest('.nav-link, .close-button')) {
+      document.body.dataset.navbarExpanded = false;
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024 && isNavbarExpanded()) {
+      document.body.dataset.navbarExpanded = false;
+    }
+  });
+});

@@ -6,71 +6,122 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
 }
 
-/* Body */
 body {
+  font-family: 'Open Sans', sans-serif;
   color: #333;
   line-height: 1.6;
 }
 
 /* Navigation Bar */
-nav {
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  color: #011167;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.navbar .overlay {
   position: fixed;
   top: 0;
-  width: 100%;
-  background-color: #011167;
-  padding: 15px 0;
+  left: 0;
   z-index: 1000;
+  transition: background-color .5s;
 }
 
-.nav-container {
+.navbar .toggle-button {
+  display: block;
+  font-size: 1.5em;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+}
+
+body[data-navbar-expanded="true"] {
+  overflow: hidden;
+}
+
+body[data-navbar-expanded="true"] .navbar .overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-logo {
   display: flex;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
-/* Logo and Organization Name */
-.logo-name {
-  display: flex;
-  align-items: center;
+.navbar-logo .logo {
+  max-width: 80px;
 }
 
-.logo-name img {
-  height: 60px;
-}
-
-.org-name {
-  margin-left: 10px;
-  font-family: 'Montserrat', sans-serif; /* Different font */
+.navbar-logo .org-name {
+  display: none;
+  margin-left: 1rem;
+  font-family: 'Montserrat', sans-serif;
   font-size: 2em;
-  color: #fff;
-  white-space: nowrap;
+  font-weight: bold;
 }
 
 /* Navigation Links */
-.navbar {
-  list-style-type: none;
-  display: flex;
+.navbar-content {
   flex-grow: 1;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: width 0.5s;
 }
 
-.navbar li {
-  margin: 0 15px;
+.navbar-content .close-button {
+  background-color: transparent;
+  border: none;
+  color: #cc0000;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 0.5rem 0 1.5rem;
 }
 
-.navbar a {
-  color: #fff;
+body[data-navbar-expanded="true"] .navbar-content {
+  padding: .5rem 1rem;
+  width: 15rem;
+  max-width: 75%;
+  z-index: 1000;
+}
+
+.navbar-nav {
+  list-style: none;
+}
+
+.navbar-nav .nav-item {
+  margin-bottom: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+  color: inherit;
   text-decoration: none;
   font-weight: bold;
 }
 
-.navbar a:hover {
+.navbar-nav .nav-link:hover {
   text-decoration: underline;
 }
 
@@ -175,18 +226,18 @@ nav {
 
 .cta-button {
   display: inline-block;
-  padding: 12px 25px;
-  background-color: #e60000;
+  padding: .75rem 1.5rem;
+  background-color: #011167;
   color: #fff;
-  border: none;
-  cursor: pointer;
-  font-size: 1em;
+  border: 1px solid #011167;
+  border-radius: .25rem;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #cc0000;
+  background-color: #fff;
+  color: #011167;
 }
 
 /* Footer */
@@ -222,44 +273,38 @@ footer {
   font-size: 0.9em;
 }
 
+@media (min-width: 1024px) {
+  .navbar-content {
+    position: static;
+  }
+
+  .navbar-nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 0 1rem;
+  }
+
+  .navbar-logo .org-name {
+    display: block;
+  }
+
+  .navbar .toggle-button,
+  .navbar-content .close-button {
+    display: none;
+  }
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
-  .logo img {
-    height: 50px;
-  }
-
-  .navbar li {
-    margin: 0 10px;
-  }
-
   .section {
     padding: 100px 30px;
   }
 }
 
 @media (max-width: 768px) {
-  nav {
-    padding: 10px 0;
-  }
-
-  .nav-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .logo {
-    margin-bottom: 10px;
-  }
-
-  .navbar {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
-  .navbar li {
-    margin: 5px 10px;
-  }
-
   .section {
     flex-direction: column;
     padding: 80px 20px;
@@ -272,11 +317,6 @@ footer {
   .slider-container {
     max-width: 100%;
     max-height: 200px; /* Adjust height for smaller screens */
-  }
-
-  /* Hide logo on small screens */
-  .logo {
-    display: none;
   }
 
   /* Adjust slider navigation buttons */

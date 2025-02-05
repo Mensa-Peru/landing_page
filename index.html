@@ -1,121 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Mensa Perú</title>
-  <link rel="stylesheet" href="static/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
-<body>
+<html lang="es-PE">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensa Perú</title>
+    <link rel="icon" href="static/img/favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style">
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="overlay"></div>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <div class="nav-container">
-      <!-- Logo Placeholder -->
-      <div class="logo-name">
-        <img src="static/img/mensa-logo.png" alt="Logo de Mensa Perú">
-        <span class="org-name">Mensa Perú</span>
-      </div>
-      <!-- Navigation Links -->
-      <ul class="navbar">
-        <li><a href="#who-we-are">Quiénes somos</a></li>
-        <li><a href="#what-we-do">Qué hacemos</a></li>
-        <li><a href="#join-us">Únete a Mensa</a></li>
-      </ul>
-    </div>
-  </nav>
+      <div class="navbar-container">
+        <div class="navbar-logo">
+          <img src="static/img/logo-mensa-peru.png" alt="Logo de Mensa Perú" class="logo">
+          <span class="org-name">Mensa Perú</span>
+        </div>
 
-  <!-- Section: Who We Are -->
-  <section id="who-we-are" class="section">
-    <div class="content">
-      <div class="slider-container">
-        <!-- Slider -->
-        <div class="slider">
-          <div class="slides" id="slides1">
-            <img src="static/img/mensa-grupo-1.jpg" alt="Reunión de Mensa">
-            <img src="static/img/mensa-grupo-2.jpg" alt="Reunión de Mensa">
-          </div>
-          <!-- Navigation Arrows -->
-          <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+        <div class="navbar-toggle">
+          <button class="toggle-button" type="button" title="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+        <div class="navbar-content">
+          <button class="close-button" type="button">
+            <i class="fa-solid fa-times"></i>
+          </button>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#who-we-are">Quiénes somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#what-we-do">Qué hacemos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#join-us">Únete a Mensa</a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="text">
-        <h2>Quiénes somos</h2>
-        <p>Mensa es la sociedad de alto coeficiente intelectual más grande, antigua y famosa del mundo, conformada por alrededor de 150,000 personas altamente inteligentes. Mensa reúne a las personas con un CI superior al 98% de la población.</p>
-        <p>Mensa Perú es el grupo reconocido por Mensa Internacional para nuestro país. ¡Hoy somos más de 150 miembros y seguimos creciendo!</p>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- Section: What we do -->
-  <section id="what-we-do" class="section">
-    <div class="content">
-      <div class="slider-container">
-        <!-- Slider -->
-        <div class="slider">
-          <div class="slides" id="slides2">
-            <img src="static/img/social-1.jpg" alt="Fraternidad en Mensa">
-            <img src="static/img/social-2.jpg" alt="Fraternidad en Mensa">
+    <!-- Section: Who We Are -->
+    <section id="who-we-are" class="section">
+      <div class="content">
+        <div class="slider-container">
+          <!-- Slider -->
+          <div class="slider">
+            <div class="slides" id="slides1">
+              <img src="static/img/mensa-grupo-1.jpg" alt="Reunión de Mensa">
+              <img src="static/img/mensa-grupo-2.jpg" alt="Reunión de Mensa">
+            </div>
+            <!-- Navigation Arrows -->
+            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
           </div>
-          <!-- Navigation Arrows -->
-          <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+        </div>
+        <div class="text">
+          <h2>Quiénes somos</h2>
+          <p>Mensa es la sociedad de alto coeficiente intelectual más grande, antigua y famosa del mundo, conformada por alrededor de 150,000 personas altamente inteligentes. Mensa reúne a las personas con un CI superior al 98% de la población.</p>
+          <p>Mensa Perú es el grupo reconocido por Mensa Internacional para nuestro país. ¡Hoy somos más de 150 miembros y seguimos creciendo!</p>
         </div>
       </div>
-      <div class="text">
-        <h2>Qué hacemos</h2>
-        <h3>Estimulación intelectual</h3>
-        <p>Mensa es un espacio donde se celebra la inteligencia. Compartir conocimiento, juegos de mesa, exposiciones y actividades culturales.</p>
-        <h3>Comunidades</h3>
-        <p>Los miembros de Mensa son libres de crear comunidades dentro de Mensa. Tenemos comunidades de Juegos de Mesa, Tecnología, Deportes, Viajes, etc.</p>
-        <h3>Networking profesional</h3>
-        <p>Eventos de ciencia, emprendimiento e intercambio de ideas. Mensa es un excelente espacio para el intercambio profesional e intelectual.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Section: Join Mensa -->
-  <section id="join-us" class="section">
-    <div class="content">
-      <!-- Fixed image -->
-      <div class="slider-container">
-          <img src="static/img/prueba.jpg" alt="Personas rindiendo la prueba de CI">
+    <!-- Section: What we do -->
+    <section id="what-we-do" class="section">
+      <div class="content">
+        <div class="slider-container">
+          <!-- Slider -->
+          <div class="slider">
+            <div class="slides" id="slides2">
+              <img src="static/img/social-1.jpg" alt="Fraternidad en Mensa">
+              <img src="static/img/social-2.jpg" alt="Fraternidad en Mensa">
+            </div>
+            <!-- Navigation Arrows -->
+            <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+          </div>
+        </div>
+        <div class="text">
+          <h2>Qué hacemos</h2>
+          <h3>Estimulación intelectual</h3>
+          <p>Mensa es un espacio donde se celebra la inteligencia. Compartir conocimiento, juegos de mesa, exposiciones y actividades culturales.</p>
+          <h3>Comunidades</h3>
+          <p>Los miembros de Mensa son libres de crear comunidades dentro de Mensa. Tenemos comunidades de Juegos de Mesa, Tecnología, Deportes, Viajes, etc.</p>
+          <h3>Networking profesional</h3>
+          <p>Eventos de ciencia, emprendimiento e intercambio de ideas. Mensa es un excelente espacio para el intercambio profesional e intelectual.</p>
+        </div>
       </div>
-      <div class="text">
-        <h2>Únete a Mensa</h2>
-        <p>Para unirte a Mensa necesitas aprobar un examen supervisado de CI, y obtener una calificación superior al 98% de la población. Si no estás seguro sobre si calificas, puedes rendir un simulacro de la prueba <a href="https://test.mensa.no/Home/Test/es">aquí</a>.</p>
-        <p>Todos los meses tomamos una prueba de CI en Lima. Inscríbete en nuestro formulario y te avisaremos la fecha y el lugar de la siguiente prueba.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc8fsWtX5aEnRuQIURLOTkVpmrkYsPaQfc4MqJlWxlhqtu2yw/viewform?usp=sf_link" class="cta-button">Inscríbete</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="links">
-        <a href="https://www.mensa.org/">Mensa Internacional</a>
-        <a href="mailto:info@mensa.pe">Contacto</a>
-        <a href="https://portal.mensa.pe/">Acceso Miembros</a>
+    <!-- Section: Join Mensa -->
+    <section id="join-us" class="section">
+      <div class="content">
+        <!-- Fixed image -->
+        <div class="slider-container">
+            <img src="static/img/prueba.jpg" alt="Personas rindiendo la prueba de CI">
+        </div>
+        <div class="text">
+          <h2>Únete a Mensa</h2>
+          <p>Para unirte a Mensa necesitas aprobar un examen supervisado de CI, y obtener una calificación superior al 98% de la población. Si no estás seguro sobre si calificas, puedes rendir un simulacro de la prueba <a href="https://test.mensa.no/Home/Test/es">aquí</a>.</p>
+          <p>Todos los meses tomamos una prueba de CI en Lima. Inscríbete en nuestro formulario y te avisaremos la fecha y el lugar de la siguiente prueba.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc8fsWtX5aEnRuQIURLOTkVpmrkYsPaQfc4MqJlWxlhqtu2yw/viewform?usp=sf_link" class="cta-button">Inscríbete</a>
+        </div>
       </div>
-      <div class="social-media">
-        <a href="https://facebook.com/Mensa.Peru/" target="_blank" title="Síguenos en Facebook">
-            <i class="fab fa-facebook fa-2x"></i>
-        </a>
-        <a href="https://www.linkedin.com/company/mensa-per%C3%BA/" target="_blank" title="Síguenos en LinkedIn">
-            <i class="fab fa-linkedin fa-2x"></i>
-        </a>
-        <a href="https://github.com/Mensa-Peru/" target="_blank" title="Síguenos en GitHub">
-            <i class="fab fa-github fa-2x"></i>
-        </a>
-      </div>
-      <p>&copy; 2025 Mensa Perú.</p>
-    </div>
-  </footer>
+    </section>
 
-  <!-- JavaScript -->
-  <script src="static/scripts.js"></script>
-</body>
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="links">
+          <a href="https://www.mensa.org/">Mensa Internacional</a>
+          <a href="mailto:info@mensa.pe">Contacto</a>
+          <a href="https://portal.mensa.pe/">Acceso Miembros</a>
+        </div>
+        <div class="social-media">
+          <a href="https://facebook.com/Mensa.Peru/" target="_blank" title="Síguenos en Facebook">
+              <i class="fab fa-facebook fa-2x"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/mensa-per%C3%BA/" target="_blank" title="Síguenos en LinkedIn">
+              <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+          <a href="https://github.com/Mensa-Peru/" target="_blank" title="Síguenos en GitHub">
+              <i class="fab fa-github fa-2x"></i>
+          </a>
+        </div>
+        <p>&copy; 2025 Mensa Perú.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="static/scripts.js"></script>
+  </body>
 </html>
