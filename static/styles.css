@@ -222,7 +222,8 @@ body[data-navbar-expanded="true"] .navbar {
 .cta-button {
   display: inline-block;
   padding: .75rem 1.5rem;
-  color: #011167;
+  background-color: #011167;
+  color: #fff;
   border: 1px solid #011167;
   border-radius: .25rem;
   text-decoration: none;
@@ -230,8 +231,8 @@ body[data-navbar-expanded="true"] .navbar {
 }
 
 .cta-button:hover {
-  background-color: #011167;
-  color: #fff;
+  background-color: #fff;
+  color: #011167;
 }
 
 /* Footer */
