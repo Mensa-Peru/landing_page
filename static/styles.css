@@ -15,20 +15,25 @@ body {
 }
 
 /* Navigation Bar */
-.navbar-container {
+.navbar {
   position: sticky;
   top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: #fff;
   color: #011167;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  padding: .5rem 3rem;
   z-index: 100;
 }
 
-.navbar-container .overlay {
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.navbar .overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -36,7 +41,7 @@ body {
   transition: background-color .5s;
 }
 
-.navbar-container .toggle-button {
+.navbar .toggle-button {
   display: block;
   font-size: 1.5em;
   cursor: pointer;
@@ -49,7 +54,7 @@ body[data-navbar-expanded="true"] {
   overflow: hidden;
 }
 
-body[data-navbar-expanded="true"] .navbar-container .overlay {
+body[data-navbar-expanded="true"] .navbar .overlay {
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.4);
@@ -73,7 +78,7 @@ body[data-navbar-expanded="true"] .navbar-container .overlay {
 }
 
 /* Navigation Links */
-.navbar {
+.navbar-content {
   flex-grow: 1;
   justify-content: center;
   position: fixed;
@@ -86,7 +91,7 @@ body[data-navbar-expanded="true"] .navbar-container .overlay {
   transition: width 0.5s;
 }
 
-.navbar .close-button {
+.navbar-content .close-button {
   background-color: transparent;
   border: none;
   color: #cc0000;
@@ -95,7 +100,7 @@ body[data-navbar-expanded="true"] .navbar-container .overlay {
   padding: 0.5rem 0 1.5rem;
 }
 
-body[data-navbar-expanded="true"] .navbar {
+body[data-navbar-expanded="true"] .navbar-content {
   padding: .5rem 1rem;
   width: 15rem;
   max-width: 75%;
@@ -269,7 +274,7 @@ footer {
 }
 
 @media (min-width: 1024px) {
-  .navbar {
+  .navbar-content {
     position: static;
   }
 
@@ -286,8 +291,8 @@ footer {
     display: block;
   }
 
-  .navbar-container .toggle-button,
-  .navbar .close-button {
+  .navbar .toggle-button,
+  .navbar-content .close-button {
     display: none;
   }
 }

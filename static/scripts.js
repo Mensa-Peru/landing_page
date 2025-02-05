@@ -86,9 +86,9 @@ function toggleMenu() {
 window.addEventListener('load', () => {
   loadPreloadedStyles();
 
-  const menuButton = document.querySelector('.navbar-container .toggle-button');
-  const navbarOverlay = document.querySelector('.navbar-container .overlay');
-  const navbar = document.querySelector('.navbar-container .navbar');
+  const menuButton = document.querySelector('.navbar .toggle-button');
+  const navbarOverlay = document.querySelector('.navbar .overlay');
+  const navbar = document.querySelector('.navbar .navbar-content');
 
   menuButton.addEventListener('click', toggleMenu);
   navbarOverlay.addEventListener('click', toggleMenu);
