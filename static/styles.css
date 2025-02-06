@@ -157,6 +157,7 @@ body[data-navbar-expanded="true"] .navbar-content {
 
 .section > * {
   flex: 1;
+  width: 100%;
 }
 
 /* Slider Styles */
