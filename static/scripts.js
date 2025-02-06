@@ -110,11 +110,13 @@ window.addEventListener('load', () => {
   const navbar = document.querySelector('.navbar');
 
   navbar.addEventListener('click', (ev) => {
-    const target = ev.target.closest('.toggle-button, .overlay, .nav-link, .close-button');
+    const target = ev.target;
 
-    if (!target) return;
-
-    toggleMenu();
+    if (target.closest('.toggle-button, .overlay')) {
+      toggleMenu();
+    } else if (isNavbarExpanded() && target.closest('.nav-link, .close-button')) {
+      toggleMenu(false);
+    }
   });
 
   window.addEventListener('resize', () => {
