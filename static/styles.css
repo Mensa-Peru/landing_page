@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Open+Sans&family=Lora&family=Montserrat&display=swap');
 
 /* General Styles */
+:root {
+  --dark-blue: #011167;
+  --blue-gray: #1e1e26;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -35,16 +40,16 @@ p {
   border-radius: .25rem;
   width: 100%;
   text-align: center;
-  background-color: #011167;
+  background-color: var(--dark-blue);
   color: #fff;
-  border: 1px solid #011167;
+  border: 1px solid var(--dark-blue);
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .btn:hover {
   background-color: #fff;
-  color: #011167;
+  color: var(--dark-blue);
 }
 
 /* Navigation Bar */
@@ -52,7 +57,7 @@ p {
   position: sticky;
   top: 0;
   background-color: #fff;
-  color: #011167;
+  color: var(--dark-blue);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   z-index: 100;
 }
