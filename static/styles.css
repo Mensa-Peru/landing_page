@@ -49,6 +49,7 @@ a:hover {
 .btn:hover {
   background-color: #fff;
   color: var(--dark-blue);
+  text-decoration: none;
 }
 
 /* Navigation Bar */
