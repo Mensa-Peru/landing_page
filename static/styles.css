@@ -145,7 +145,8 @@ body[data-navbar-expanded="true"] .navbar-content {
   flex-direction: column;
   align-items: center;
   padding: 4rem 1rem;
-  width: 100%
+  width: 100%;
+  min-height: 100vh;
 }
 
 .section:nth-child(even) {
