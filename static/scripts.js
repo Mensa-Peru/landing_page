@@ -36,11 +36,7 @@ class SlideShow {
   nextSlide() {
     clearTimeout(this.timer);
 
-    this.currentIndex++;
-
-    if (this.currentIndex >= this.totalSlides) {
-      this.currentIndex = 0;
-    }
+    this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
 
     this.showSlide();
     this.loop();
@@ -49,11 +45,7 @@ class SlideShow {
   prevSlide() {
     clearTimeout(this.timer);
 
-    if (!this.currentIndex) {
-      this.currentIndex = this.totalSlides;
-    }
-
-    this.currentIndex--;
+    this.currentIndex = (this.currentIndex + this.totalSlides - 1) % this.totalSlides;
 
     this.showSlide();
     this.loop();
