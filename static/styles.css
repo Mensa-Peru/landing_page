@@ -144,7 +144,7 @@ body[data-navbar-expanded="true"] .navbar-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 3rem;
+  padding: 4rem 1rem;
   width: 100%;
   min-height: 100vh;
   gap: 2rem;
@@ -289,5 +289,7 @@ footer {
 
   .section {
     flex-direction: row;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
