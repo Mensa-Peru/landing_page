@@ -19,16 +19,6 @@ body {
   line-height: 1.6;
 }
 
-h2 {
-  margin-bottom: 1.25rem;
-  font-size: 2em;
-}
-
-p {
-  margin-bottom: 1rem;
-  font-size: 1em;
-}
-
 .container, .w-full {
   width: 100%;
 }
@@ -182,6 +172,16 @@ body[data-navbar-expanded="true"] .navbar-content {
 .section > * {
   flex: 1;
   width: 100%;
+}
+
+.section h2 {
+  margin-bottom: 1.25rem;
+  font-size: 2em;
+}
+
+.section p {
+  margin-bottom: 1rem;
+  font-size: 1em;
 }
 
 /* Slider Styles */
