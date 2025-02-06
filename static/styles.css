@@ -14,6 +14,16 @@ body {
   line-height: 1.6;
 }
 
+h2 {
+  margin-bottom: 1.25rem;
+  font-size: 2em;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1em;
+}
+
 .container {
   width: 100%;
 }
@@ -142,8 +152,12 @@ body[data-navbar-expanded="true"] .navbar-content {
   background-color: #f9f9f9;
 }
 
+.section > * {
+  flex: 1;
+}
+
 /* Content Container */
-.slider-container, .text {
+.slider-container {
   flex: 1;
   padding: 20px;
 }
@@ -206,16 +220,6 @@ body[data-navbar-expanded="true"] .navbar-content {
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Text Content */
-.text h2 {
-  margin-bottom: 20px;
-  font-size: 2em;
-}
-
-.text p {
-  margin-bottom: 30px;
-  font-size: 1.1em;
-}
 
 .cta-button {
   display: inline-block;
