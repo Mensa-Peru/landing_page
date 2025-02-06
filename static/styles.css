@@ -144,9 +144,11 @@ body[data-navbar-expanded="true"] .navbar-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 1rem;
+  padding: 4rem 3rem;
   width: 100%;
   min-height: 100vh;
+  gap: 2rem;
+  font-size: 1.1rem;
 }
 
 .section:nth-child(even) {
@@ -157,68 +159,52 @@ body[data-navbar-expanded="true"] .navbar-content {
   flex: 1;
 }
 
-/* Content Container */
-.slider-container {
-  flex: 1;
-  padding: 20px;
-}
-
 /* Slider Styles */
-.slider-container {
-  width: 800px;
-  height: 600px;
+.slider, .slides {
+  position: relative;
+  width: 100%;
+  height: inherit;
   overflow: hidden;
 }
 
-.slider {
-  position: relative;
+.slides > * {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-}
-
-.slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
-  height: 100%;
-}
-
-/* Slider Images */
-.slides img {
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover; /* Scales the image while maintaining aspect ratio */
-  object-position: center;
+  object-fit: cover;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out; /* Duration of fade effect */
+  transition: opacity 1s ease-in-out;
 }
 
-.slides img.active {
+.slides > .active {
   opacity: 1;
 }
 
-/* Navigation Arrows */
-.prev, .next {
+.slider .navigation > * {
   position: absolute;
   top: 50%;
-  padding: 16px;
-  background-color: rgba(0,0,0,0.5);
-  color: #fff;
+  padding: 1rem;
   cursor: pointer;
   transform: translateY(-50%);
-  user-select: none;
 }
 
-.prev {
-  left: 10px;
+.slider .navigation > *,
+.slider .navigation > *:hover,
+.slider .navigation > *:focus {
+  color: #fff;
+  background: none;
+  border: none;
+  text-decoration: none;
 }
 
-.next {
-  right: 10px;
+.slider .navigation .prev {
+  left: 1rem;
 }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.slider .navigation .next {
+  right: 1rem;
 }
 
 
@@ -271,6 +257,12 @@ footer {
   font-size: 0.9em;
 }
 
+
+#slider-1, #slider-2 {
+  width: 100%;
+  height: 35rem;
+}
+
 @media (min-width: 1024px) {
   .navbar-content {
     position: static;
@@ -296,18 +288,5 @@ footer {
 
   .section {
     flex-direction: row;
-  }
-}
-
-@media (max-width: 768px) {
-  .slider-container {
-    max-width: 100%;
-    max-height: 200px; /* Adjust height for smaller screens */
-  }
-
-  /* Adjust slider navigation buttons */
-  .prev, .next {
-    top: 45%;
-    padding: 12px;
   }
 }
