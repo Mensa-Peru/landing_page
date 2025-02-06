@@ -24,7 +24,7 @@ p {
   font-size: 1em;
 }
 
-.container {
+.container, .w-full {
   width: 100%;
 }
 
