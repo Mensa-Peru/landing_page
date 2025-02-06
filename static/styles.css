@@ -5,6 +5,7 @@
 :root {
   --dark-blue: #011167;
   --blue-gray: #1e1e26;
+  --max-width-container: 1200px;
 }
 
 * {
@@ -68,7 +69,7 @@ a:hover {
   align-items: center;
   padding: .5rem 1rem;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: var(--max-width-container);
 }
 
 .navbar .overlay {
@@ -236,33 +237,38 @@ body[data-navbar-expanded="true"] .navbar-content {
 }
 
 /* Footer */
-.footer-section,
-.footer-section .links,
-.footer-section .social-media {
+footer {
+  background-color: var(--blue-gray);
+  color: #fff;
+  padding: 2rem 0 1rem;
+}
+
+footer a {
+  color: inherit;
+}
+
+.footer-container,
+.footer-container .links,
+.footer-container .social-media {
   display: flex;
   gap: 1rem;
 }
 
-.footer-section,
-.footer-section .links {
+.footer-container,
+.footer-container .links {
   flex-direction: column;
   align-items: center;
 }
 
-.footer-section {
-  background-color: var(--blue-gray);
-  color: #fff;
-  padding: 2rem 1rem 1rem;
+.footer-container {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: var(--max-width-container);
 }
 
-.footer-section a {
-  color: inherit;
-}
-
-.footer-section .copyrigth {
+.footer-container .copyrigth {
   font-size: 0.8rem;
   text-align: center;
-  width: 100%;
 }
 
 #slider-1, #slider-2 {
@@ -270,14 +276,12 @@ body[data-navbar-expanded="true"] .navbar-content {
 }
 
 @media (min-width: 768px) {
-  .footer-section,
-  .footer-section .links {
+  .footer-container,
+  .footer-container .links {
     flex-direction: row;
   }
 
-  .footer-section {
-    padding-left: 3rem;
-    padding-right: 3rem;
+  .footer-container {
     flex-wrap: wrap;
     justify-content: space-between;
   }
