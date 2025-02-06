@@ -292,4 +292,8 @@ footer {
     padding-left: 3rem;
     padding-right: 3rem;
   }
+
+  #what-we-do {
+    flex-direction: row-reverse;
+  }
 }
