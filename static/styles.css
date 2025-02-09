@@ -275,6 +275,12 @@ footer a {
   text-align: center;
 }
 
+#join-us .img {
+  height: 25rem;
+  object-fit: cover;
+  object-position: right;
+}
+
 @media (min-width: 768px) {
   .footer-container,
   .footer-container .links {
@@ -284,6 +290,10 @@ footer a {
   .footer-container {
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  #join-us .img {
+    object-position: top;
   }
 }
 
@@ -326,5 +336,9 @@ footer a {
 
   .slider {
     min-height: 30rem;
+  }
+
+  #join-us .img {
+    height: 30rem;
   }
 }
