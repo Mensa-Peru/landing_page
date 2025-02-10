@@ -129,7 +129,6 @@ body[data-navbar-expanded="true"] .navbar .overlay {
   background-color: #fff;
   overflow-x: hidden;
   transform: translateX(100%);
-  transition: transform 0.5s ease
 }
 
 .navbar-content .close-button {
@@ -143,6 +142,7 @@ body[data-navbar-expanded="true"] .navbar .overlay {
 
 body[data-navbar-expanded="true"] .navbar-content {
   padding: .5rem 1rem;
+  transition: transform 0.5s ease;
   transform: translateX(0);
   z-index: 1000;
 }
@@ -305,6 +305,7 @@ footer a {
 
   .navbar-content {
     position: static;
+    transform: none;
   }
 
   .navbar-nav {
