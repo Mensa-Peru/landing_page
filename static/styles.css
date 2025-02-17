@@ -5,7 +5,6 @@
 :root {
   --dark-blue: #011167;
   --blue-gray: #1e1e26;
-  --max-width-container: 1200px;
 }
 
 * {
@@ -29,8 +28,12 @@ a:hover {
   text-decoration: underline;
 }
 
-.container, .w-full {
+.w-full { width: 100%; }
+
+.container {
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn {
@@ -63,13 +66,11 @@ a:hover {
   z-index: 100;
 }
 
-.navbar-container {
+.navbar > .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: .5rem 1rem;
-  margin: 0 auto;
-  max-width: var(--max-width-container);
 }
 
 .navbar .overlay {
@@ -124,10 +125,11 @@ body[data-navbar-expanded="true"] .navbar .overlay {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 0;
+  width: 15rem;
+  max-width: 75%;
   background-color: #fff;
   overflow-x: hidden;
-  transition: width 0.5s;
+  transform: translateX(100%);
 }
 
 .navbar-content .close-button {
@@ -141,8 +143,8 @@ body[data-navbar-expanded="true"] .navbar .overlay {
 
 body[data-navbar-expanded="true"] .navbar-content {
   padding: .5rem 1rem;
-  width: 15rem;
-  max-width: 75%;
+  transition: transform 0.5s ease;
+  transform: translateX(0);
   z-index: 1000;
 }
 
@@ -160,22 +162,8 @@ body[data-navbar-expanded="true"] .navbar-content {
 }
 
 /* Sections */
-.section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4rem 1rem;
-  min-height: 100vh;
-  gap: 2rem;
-  font-size: 1.1rem;
-}
-
 .section:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.section > * {
-  flex: 1;
+  background-color: #efefef;
 }
 
 .section h2 {
@@ -188,12 +176,30 @@ body[data-navbar-expanded="true"] .navbar-content {
   font-size: 1em;
 }
 
+.section > .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 1rem;
+  gap: 2rem;
+  font-size: 1.1rem;
+
+  > * {
+    flex: 1;
+  }
+}
+
 /* Slider Styles */
 .slider, .slides {
   position: relative;
   width: 100%;
   height: inherit;
+  min-height: inherit;
   overflow: hidden;
+}
+
+.slider {
+  min-height: 25rem;
 }
 
 .slides > * {
@@ -237,63 +243,66 @@ body[data-navbar-expanded="true"] .navbar-content {
 }
 
 /* Footer */
-footer {
+.footer {
   background-color: var(--blue-gray);
   color: #fff;
   padding: 2rem 0 1rem;
+
+  a { color: inherit; }
+
+  .copyrigth {
+    width: 100%;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
 }
 
-footer a {
-  color: inherit;
-}
-
-.footer-container,
-.footer-container .links,
-.footer-container .social-media {
+.footer > .container,
+.footer > .container .links,
+.footer > .container .social-media {
   display: flex;
   gap: 1rem;
 }
 
-.footer-container,
-.footer-container .links {
+.footer > .container,
+.footer > .container .links {
   flex-direction: column;
   align-items: center;
 }
 
-.footer-container {
-  margin: 0 auto;
+.footer > .container {
   padding: 0 1rem;
-  max-width: var(--max-width-container);
 }
 
-.footer-container .copyrigth {
-  font-size: 0.8rem;
-  text-align: center;
+#join-us .img {
+  height: 25rem;
+  object-fit: cover;
+  object-position: right;
 }
 
-#slider-1, #slider-2 {
-  height: 35rem;
-}
-
-@media (min-width: 768px) {
-  .footer-container,
-  .footer-container .links {
+@media (min-width: 48rem) {
+  .footer > .container,
+  .footer > .container .links {
     flex-direction: row;
   }
 
-  .footer-container {
+  .footer > .container {
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
+  #join-us .img {
+    object-position: top;
+  }
 }
 
-@media (min-width: 1024px) {
-  .btn {
-    width: auto;
-  }
+@media (min-width: 64rem) {
+  .btn { width: auto; }
 
   .navbar-content {
     position: static;
+    transform: none;
   }
 
   .navbar-nav {
@@ -314,13 +323,27 @@ footer a {
     display: none;
   }
 
-  .section {
-    flex-direction: row;
+  .slider {
+    min-height: 30rem;
+  }
+
+  .section > .container {
+    flex-direction: row-reverse;
     padding-left: 3rem;
     padding-right: 3rem;
   }
 
-  #what-we-do {
-    flex-direction: row-reverse;
+  .section:nth-child(even) > .container {
+    flex-direction: row;
+  }
+
+  #join-us .img {
+    height: 30rem;
+  }
+}
+
+@media (min-width: 96rem) {
+  .container {
+    max-width: 96rem;
   }
 }

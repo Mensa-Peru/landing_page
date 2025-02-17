@@ -92,8 +92,12 @@ document.addEventListener('click', (ev) => {
 
   ev.preventDefault();
 
-  document.querySelector(target.getAttribute('href'))
-          .scrollIntoView({ behavior: 'smooth' });
+  const targetElem = document.querySelector(target.getAttribute('href'));
+  const navbarHeight = document.querySelector('.navbar').offsetHeight;
+  const targetTop = targetElem.getBoundingClientRect().top - navbarHeight;
+  const scrollY = window.scrollY + targetTop;
+
+  window.scrollTo({ top: scrollY, behavior: 'smooth' });
 });
 
 window.addEventListener('load', () => {
@@ -112,9 +116,9 @@ window.addEventListener('load', () => {
   });
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth >= 1024 && isNavbarExpanded()) {
-      toggleMenu(false);
-    }
+    if (window.innerWidth < 1024 || !isNavbarExpanded()) return;
+
+    toggleMenu(false);
   });
 
   // Initialize slideshow
