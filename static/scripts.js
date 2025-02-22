@@ -67,6 +67,45 @@ class SlideShow {
   }
 }
 
+class ColorSchemeButton {
+  constructor() {
+    this.mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const mqScheme = this.mediaQuery.matches ? 'dark' : 'light';
+    this.mediaQuery.addEventListener('change', this.mqSchemeChange.bind(this));
+    this.colorScheme = localStorage.getItem('color-scheme') ?? mqScheme;
+
+    this.buttonElements = document.querySelectorAll('.theme-toggle');
+    this.buttonElements.forEach(button => {
+      button.addEventListener('click', this.buttonToggle.bind(this));
+    });
+
+    this.updateColorScheme();
+  }
+
+  buttonToggle() {
+    this.colorScheme = this.colorScheme === 'dark' ? 'light' : 'dark';
+    this.updateColorScheme();
+  }
+
+  mqSchemeChange() {
+    this.colorScheme = this.mediaQuery.matches ? 'dark' : 'light';
+    this.updateColorScheme();
+  }
+
+  updateColorScheme() {
+    localStorage.setItem('color-scheme', this.colorScheme);
+    document.documentElement.setAttribute('data-color-scheme', this.colorScheme);
+    this.updateColorSchemeButtons();
+  }
+
+  updateColorSchemeButtons() {
+    this.buttonElements.forEach(button => {
+      button.classList.remove('dark-mode-button', 'light-mode-button');
+      button.classList.add(`${this.colorScheme}-mode-button`);
+    });
+  }
+}
+
 function loadPreloadedStyles() {
   document.querySelectorAll('link[rel="preload"][as="style"]').forEach(link => {
     link.rel = 'stylesheet';
@@ -123,4 +162,6 @@ window.addEventListener('load', () => {
 
   // Initialize slideshow
   document.querySelectorAll('.slider').forEach(elem => new SlideShow(elem));
+
+  new ColorSchemeButton();
 });
