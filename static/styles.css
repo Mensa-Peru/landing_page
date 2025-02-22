@@ -5,6 +5,26 @@
 :root {
   --dark-blue: #011167;
   --blue-gray: #1e1e26;
+
+  --font-color: #333333;
+  --link-color: #0061c9;
+  --background-color: #ffffff;
+  --navbar-bg-color: #ffffff;
+  --navbar-font-color: var(--dark-blue);
+  --navbar-close-button: #cc0000;
+  --content-even-bg-color: #efefef;
+  --button-background: var(--dark-blue);
+}
+
+[data-color-scheme="dark"] {
+  --font-color: #ffffff;
+  --link-color: #3597ff;
+  --background-color: #272727;
+  --navbar-bg-color: #202020;
+  --navbar-font-color: #ffffff;
+  --navbar-close-button: #ffffff;
+  --content-even-bg-color: #2d2d2d;
+  --button-background: #0f7d89;
 }
 
 * {
@@ -15,12 +35,14 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  color: #333;
+  color: var(--font-color);
   line-height: 1.6;
+  background-color: var(--background-color);
+  transition: color 0.5s;
 }
 
 a {
-  color: #6495ed;
+  color: var(--link-color);
   text-decoration: none;
 }
 
@@ -44,9 +66,9 @@ a:hover {
   border-radius: .25rem;
   width: 100%;
   text-align: center;
-  background-color: var(--dark-blue);
+  background-color: var(--button-background);
   color: #fff;
-  border: 1px solid var(--dark-blue);
+  border: 1px solid var(--button-background);
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
@@ -61,8 +83,9 @@ a:hover {
 .navbar {
   position: sticky;
   top: 0;
-  background-color: #fff;
-  color: var(--dark-blue);
+  background-color: var(--navbar-bg-color);
+  transition: background-color 0.5s;
+  color: var(--navbar-font-color);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   z-index: 100;
 }
@@ -128,7 +151,8 @@ body[data-navbar-expanded="true"] .navbar .overlay {
   bottom: 0;
   width: 15rem;
   max-width: 75%;
-  background-color: #fff;
+  background-color: var(--navbar-bg-color);
+  transition: background-color 0.5s;
   overflow-x: hidden;
   transform: translateX(100%);
 }
@@ -136,7 +160,7 @@ body[data-navbar-expanded="true"] .navbar .overlay {
 .navbar-content .close-button {
   background-color: transparent;
   border: none;
-  color: #cc0000;
+  color: var(--narbar-close-button);
   font-size: 1.5em;
   cursor: pointer;
   padding: 0.5rem 0 1.5rem;
@@ -164,7 +188,8 @@ body[data-navbar-expanded="true"] .navbar-content {
 
 /* Sections */
 .section:nth-child(even) {
-  background-color: #efefef;
+  background-color: var(--content-even-bg-color);
+  transition: background-color 0.5s;
 }
 
 .section h2 {
