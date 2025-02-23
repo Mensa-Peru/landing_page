@@ -74,7 +74,7 @@ class ColorSchemeButton {
     this.mediaQuery.addEventListener('change', this.mqSchemeChange.bind(this));
     this.colorScheme = localStorage.getItem('color-scheme') ?? mqScheme;
 
-    this.buttonElements = document.querySelectorAll('.theme-toggle');
+    this.buttonElements = document.querySelectorAll('.dark-mode-toggle');
     this.buttonElements.forEach(button => {
       button.addEventListener('click', this.buttonToggle.bind(this));
     });
@@ -95,14 +95,6 @@ class ColorSchemeButton {
   updateColorScheme() {
     localStorage.setItem('color-scheme', this.colorScheme);
     document.documentElement.setAttribute('data-color-scheme', this.colorScheme);
-    this.updateColorSchemeButtons();
-  }
-
-  updateColorSchemeButtons() {
-    this.buttonElements.forEach(button => {
-      button.classList.remove('dark-mode-button', 'light-mode-button');
-      button.classList.add(`${this.colorScheme}-mode-button`);
-    });
   }
 }
 
@@ -149,7 +141,7 @@ window.addEventListener('load', () => {
 
     if (target.closest('.toggle-button, .overlay')) {
       toggleMenu();
-    } else if (isNavbarExpanded() && target.closest('.nav-link, .close-button')) {
+    } else if (isNavbarExpanded() && target.closest('.nav-link')) {
       toggleMenu(false);
     }
   });

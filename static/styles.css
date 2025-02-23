@@ -11,7 +11,6 @@
   --background-color: #ffffff;
   --navbar-bg-color: #ffffff;
   --navbar-font-color: var(--dark-blue);
-  --navbar-close-button: #cc0000;
   --content-even-bg-color: #efefef;
   --button-background: var(--dark-blue);
 }
@@ -22,7 +21,6 @@
   --background-color: #272727;
   --navbar-bg-color: #202020;
   --navbar-font-color: #ffffff;
-  --navbar-close-button: #ffffff;
   --content-even-bg-color: #2d2d2d;
   --button-background: #0f7d89;
 }
@@ -112,6 +110,12 @@ a:hover {
   background-color: transparent;
   border: none;
   color: inherit;
+  position: relative;
+  z-index: 1100;
+}
+
+.navbar > .container .navbar-theme-button {
+  display: none;
 }
 
 body[data-navbar-expanded="true"] {
@@ -157,17 +161,8 @@ body[data-navbar-expanded="true"] .navbar .overlay {
   transform: translateX(100%);
 }
 
-.navbar-content .close-button {
-  background-color: transparent;
-  border: none;
-  color: var(--narbar-close-button);
-  font-size: 1.5em;
-  cursor: pointer;
-  padding: 0.5rem 0 1.5rem;
-}
-
 body[data-navbar-expanded="true"] .navbar-content {
-  padding: .5rem 1rem;
+  padding: 3.8rem 1rem;
   transition: transform 0.5s ease;
   transform: translateX(0);
   z-index: 1000;
@@ -184,6 +179,49 @@ body[data-navbar-expanded="true"] .navbar-content {
 .navbar-nav .nav-link {
   color: inherit;
   font-weight: bold;
+}
+
+.navbar-content .sidebar-theme-button {
+  display: flex;
+  bottom: 2rem;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  background: none;
+  border: 2px solid var(--navbar-font-color);
+  cursor: pointer;
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-mode-toggle .icon-sun,
+.dark-mode-toggle .icon-moon {
+  position: absolute;
+  font-size: 1.5rem;
+  transition: opacity 0.3s ease;
+  color: var(--navbar-font-color);
+}
+
+.dark-mode-toggle .icon-sun {
+  opacity: 1;
+}
+
+.dark-mode-toggle .icon-moon {
+  opacity: 0;
+}
+
+[data-color-scheme="dark"] .dark-mode-toggle .icon-sun {
+  opacity: 0;
+}
+
+[data-color-scheme="dark"] .dark-mode-toggle .icon-moon {
+  opacity: 1;
 }
 
 /* Sections */
@@ -347,12 +385,16 @@ body[data-navbar-expanded="true"] .navbar-content {
     margin: 0 1rem;
   }
 
+  .navbar > .container .navbar-theme-button {
+    display: flex;
+  }
+
   .navbar-logo .org-name {
     display: block;
   }
 
   .navbar .toggle-button,
-  .navbar-content .close-button {
+  .navbar-content .sidebar-theme-button {
     display: none;
   }
 
