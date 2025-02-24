@@ -12,17 +12,17 @@
   --navbar-bg-color: #ffffff;
   --navbar-font-color: var(--dark-blue);
   --content-even-bg-color: #efefef;
-  --button-background: var(--dark-blue);
+  --button-bg: var(--dark-blue);
 }
 
 [data-color-scheme="dark"] {
   --font-color: #ffffff;
   --link-color: #3597ff;
-  --background-color: #272727;
+  --background-color: #2d2d2d;
   --navbar-bg-color: #202020;
   --navbar-font-color: #ffffff;
-  --content-even-bg-color: #2d2d2d;
-  --button-background: #0f7d89;
+  --content-even-bg-color: #272727;
+  --button-bg: #0f7d89;
 }
 
 * {
@@ -64,16 +64,16 @@ a:hover {
   border-radius: .25rem;
   width: 100%;
   text-align: center;
-  background-color: var(--button-background);
+  background-color: var(--button-bg);
   color: #fff;
-  border: 1px solid var(--button-background);
+  border: 1px solid var(--button-bg);
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #fff;
-  color: var(--dark-blue);
+  background-color: var(--background-color);
+  color: var(--button-bg);
   text-decoration: none;
 }
 
@@ -189,7 +189,8 @@ body[data-navbar-expanded="true"] .navbar-content {
 /* Dark Mode Toggle Button */
 .dark-mode-toggle {
   background: none;
-  border: 2px solid var(--navbar-font-color);
+  border: none;
+  color: var(--navbar-font-color);
   cursor: pointer;
   position: relative;
   width: 2.5rem;
@@ -198,6 +199,12 @@ body[data-navbar-expanded="true"] .navbar-content {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.5s ease;
+}
+
+.dark-mode-toggle:hover {
+  background-color: var(--navbar-font-color);
+  color: var(--navbar-bg-color);
 }
 
 .dark-mode-toggle .icon-sun,
@@ -205,7 +212,6 @@ body[data-navbar-expanded="true"] .navbar-content {
   position: absolute;
   font-size: 1.5rem;
   transition: opacity 0.3s ease;
-  color: var(--navbar-font-color);
 }
 
 .dark-mode-toggle .icon-sun {
