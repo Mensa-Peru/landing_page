@@ -67,17 +67,21 @@ class SlideShow {
   }
 }
 
-class ColorSchemeButton {
+class ThemeManager {
   #isDarkTheme;
   buttonSelector = '.dark-mode-toggle';
 
   constructor() {
     this.mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-    this.updateColorScheme();
-
     this.mediaQuery.addEventListener('change', this.mqSchemeListener.bind(this));
     document.addEventListener('click', this.toggleDarkThemeListener.bind(this));
+  }
+
+  static init() {
+    const manager = new ThemeManager();
+
+    manager.updateColorScheme();
   }
 
   isDarkTheme() {
@@ -180,5 +184,5 @@ window.addEventListener('load', () => {
   // Initialize slideshow
   document.querySelectorAll('.slider').forEach(elem => new SlideShow(elem));
 
-  new ColorSchemeButton();
+  ThemeManager.init();
 });
