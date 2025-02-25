@@ -155,6 +155,7 @@ body[data-navbar-expanded="true"] .navbar .overlay {
   transition: background-color 0.5s;
   overflow-x: hidden;
   transform: translateX(100%);
+  padding: .5rem 1rem;
 
   .theme-toggle {
     display: flex;
@@ -164,7 +165,6 @@ body[data-navbar-expanded="true"] .navbar .overlay {
 }
 
 body[data-navbar-expanded="true"] .navbar-content {
-  padding: .5rem 1rem;
   transition: transform 0.5s ease;
   transform: translateX(0);
   z-index: 1000;
@@ -340,10 +340,12 @@ body[data-navbar-expanded="true"] .navbar-content {
 @media (min-width: 48rem) {
   .navbar > .container,
   .section > .container,
-  body[data-navbar-expanded="true"] .navbar-content {
+  .navbar-content {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
+  .navbar-content { width: 17rem; }
 
   .footer > .container,
   .footer > .container .links {
