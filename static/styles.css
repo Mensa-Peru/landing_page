@@ -339,7 +339,8 @@ body[data-navbar-expanded="true"] .navbar-content {
 
 @media (min-width: 48rem) {
   .navbar > .container,
-  .container {
+  .section > .container,
+  body[data-navbar-expanded="true"] .navbar-content {
     padding-left: 2rem;
     padding-right: 2rem;
   }
