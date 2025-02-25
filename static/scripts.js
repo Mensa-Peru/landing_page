@@ -81,8 +81,9 @@ class ColorSchemeButton {
   }
 
   isDarkTheme() {
-    if (this.#isDarkTheme == undefined) {
-      this.#isDarkTheme = localStorage.getItem('dark-theme') === 'true' ?? this.mediaQuery.matches;
+    if (this.#isDarkTheme === undefined) {
+      const storedValue = localStorage.getItem('dark-theme');
+      this.#isDarkTheme = storedValue ? storedValue === 'true' : this.mediaQuery.matches;
     }
 
     return this.#isDarkTheme;
