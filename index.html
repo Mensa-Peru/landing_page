@@ -6,14 +6,14 @@
     <title>Mensa Perú</title>
     <link rel="icon" href="static/img/favicon-32x32.png" type="image/png">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style">
-    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/styles.css?v=3.5">
   </head>
   <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="overlay"></div>
 
-      <div class="navbar-container">
+      <div class="container">
         <div class="navbar-logo">
           <img src="static/img/logo-mensa-peru.png" alt="Logo de Mensa Perú" class="logo">
           <span class="org-name">Mensa Perú</span>
@@ -26,9 +26,16 @@
         </div>
 
         <div class="navbar-content">
-          <button class="close-button" type="button">
-            <i class="fa-solid fa-times"></i>
-          </button>
+          <div class="theme-toggle">
+            <button class="dark-mode-toggle" type="button" title="Cambiar tema">
+              <i class="fas fa-sun active"></i>
+              <i class="fas fa-moon"></i>
+            </button>
+            <button class="toggle-button" type="button" title="Cerrar menú">
+              <i class="fa-solid fa-times"></i>
+            </button>
+          </div>
+
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="#who-we-are">Quiénes somos</a>
@@ -41,79 +48,90 @@
             </li>
           </ul>
         </div>
+
+        <div class="theme-toggle">
+          <button class="dark-mode-toggle" type="button" title="Cambiar tema">
+            <i class="fas fa-sun active"></i>
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
       </div>
     </nav>
 
-    <div class="container">
-      <section id="who-we-are" class="section w-full">
-        <div class="w-full">
-          <h2>Quiénes somos</h2>
-          <p>
-            Mensa es la sociedad de alto coeficiente intelectual más grande, antigua y famosa del mundo,
-            conformada por alrededor de 150,000 personas altamente inteligentes. Mensa reúne a las
-            personas con un CI superior al 98% de la población.
-          </p>
-          <p>
-            Mensa Perú es el grupo reconocido por Mensa Internacional para nuestro país. ¡Hoy somos
-            más de 150 miembros y seguimos creciendo!
-          </p>
-        </div>
+    <main>
+      <section id="who-we-are" class="section">
+        <div class="container">
+          <div class="w-full">
+            <h2>Quiénes somos</h2>
+            <p>
+              Mensa es la sociedad de alto coeficiente intelectual más grande, antigua y famosa del mundo,
+              conformada por alrededor de 150,000 personas altamente inteligentes. Mensa reúne a las
+              personas con un CI superior al 98% de la población.
+            </p>
+            <p>
+              Mensa Perú es el grupo reconocido por Mensa Internacional para nuestro país. ¡Hoy somos
+              más de 150 miembros y seguimos creciendo!
+            </p>
+          </div>
 
-        <div class="w-full">
-          <div class="slider" id="slider-1">
-            <div class="slides">
-              <img src="static/img/mensa-grupo-1.jpg" alt="Reunión de Mensa 1" class="active">
-              <img src="static/img/mensa-grupo-2.jpg" alt="Reunión de Mensa 2">
-            </div>
+          <div class="w-full">
+            <div class="slider" id="slider-1">
+              <div class="slides">
+                <img src="static/img/mensa-grupo-1.jpg" alt="Reunión de Mensa 1" class="active">
+                <img src="static/img/mensa-grupo-2.jpg" alt="Reunión de Mensa 2">
+              </div>
 
-            <div class="navigation">
-              <button type="button" class="prev">&#10094;</button>
-              <button type="button" class="next">&#10095;</button>
+              <div class="navigation">
+                <button type="button" class="prev">&#10094;</button>
+                <button type="button" class="next">&#10095;</button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="what-we-offer" class="section w-full">
-        <div class="w-full">
-          <h2 class="text-center">¿Qué ofrecemos?</h2>
+      <section id="what-we-offer" class="section">
+        <div class="container section-wrap">
+          <div class="w-full">
+            <h2 class="text-center">¿Qué ofrecemos?</h2>
 
-          <div class="services">
-            <div>
-              <div class="services-title">
-                <i class="fa-solid fa-calendar"></i>
-                <h3>Actividades</h3>
+            <div class="services">
+              <div>
+                <div class="services-title">
+                  <i class="fa-solid fa-calendar"></i>
+                  <h3>Actividades</h3>
+                </div>
+                <p>
+                  Realizamos actividades para nuestros miembros, como reuniones, charlas, talleres,
+                  salidas y eventos sociales.
+                </p>
               </div>
-              <p>
-                Realizamos actividades para nuestros miembros, como reuniones, charlas, talleres,
-                salidas y eventos sociales.
-              </p>
-            </div>
 
-            <div>
-              <div class="services-title">
-                <i class="fa-solid fa-comments"></i>
-                <h3>Grupos de interés</h3>
+              <div>
+                <div class="services-title">
+                  <i class="fa-solid fa-comments"></i>
+                  <h3>Grupos de interés</h3>
+                </div>
+                <p>
+                  Tenemos grupos de interés donde nuestros miembros pueden intercambiar, debatir y charlar sobre
+                  temas de su interés.
+                </p>
               </div>
-              <p>
-                Tenemos grupos de interés donde nuestros miembros pueden intercambiar, debatir y charlar sobre
-                temas de su interés.
-              </p>
-            </div>
 
-            <div>
-              <div class="services-title">
-                <i class="fa-solid fa-users"></i>
-                <h3>Red de contactos</h3>
+              <div>
+                <div class="services-title">
+                  <i class="fa-solid fa-users"></i>
+                  <h3>Red de contactos</h3>
+                </div>
+                <p>
+                  Mensa Perú es una red de contactos de personas inteligentes y talentosas, con quienes puedes
+                  compartir experiencias y conocimientos.
+                </p>
               </div>
-              <p>
-                Mensa Perú es una red de contactos de personas inteligentes y talentosas, con quienes puedes
-                compartir experiencias y conocimientos.
-              </p>
             </div>
           </div>
 
-          <div class="meetings">
+          <div class="w-full meetings">
             <div class="w-full">
               <h3>Reuniones mensuales</h3>
               <p>
@@ -138,43 +156,45 @@
         </div>
       </section>
 
-      <section id="join-us" class="section w-full">
-        <div class="w-full">
-          <h2>Únete a Mensa</h2>
-          <p>
-            Para unirte a Mensa necesitas aprobar un examen supervisado de CI, y obtener una calificación
-            superior al 98% de la población. Si no estás seguro sobre si calificas, puedes rendir un
-            simulacro de la prueba
-            <a href="https://test.mensa.no/Home/Test/es"
-               rel="noopener"
-               target="_blank"
-               title="Simulacro de prueba de CI"
+      <section id="join-us" class="section">
+        <div class="container">
+          <div class="w-full">
+            <h2>Únete a Mensa</h2>
+            <p>
+              Para unirte a Mensa necesitas aprobar un examen supervisado de CI, y obtener una calificación
+              superior al 98% de la población. Si no estás seguro sobre si calificas, puedes rendir un
+              simulacro de la prueba
+              <a href="https://test.mensa.no/Home/Test/es"
+                rel="noopener"
+                target="_blank"
+                title="Simulacro de prueba de CI"
+              >
+                aquí
+              </a>.
+            </p>
+            <p>
+              Todos los meses tomamos una prueba de CI en Lima. Inscríbete en nuestro formulario y te
+              avisaremos la fecha y el lugar de la siguiente prueba.
+            </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc8fsWtX5aEnRuQIURLOTkVpmrkYsPaQfc4MqJlWxlhqtu2yw/viewform?usp=sf_link"
+              class="btn"
+              rel="noopener"
+              target="_blank"
             >
-              aquí
-            </a>.
-          </p>
-          <p>
-            Todos los meses tomamos una prueba de CI en Lima. Inscríbete en nuestro formulario y te
-            avisaremos la fecha y el lugar de la siguiente prueba.
-          </p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc8fsWtX5aEnRuQIURLOTkVpmrkYsPaQfc4MqJlWxlhqtu2yw/viewform?usp=sf_link"
-             class="btn"
-             rel="noopener"
-             target="_blank"
-          >
-            Inscríbete
-          </a>
-        </div>
+              Inscríbete
+            </a>
+          </div>
 
-        <div class="w-full">
-          <img src="static/img/prueba.jpg" alt="Personas rindiendo la prueba de CI" class="w-full img">
+          <div class="w-full">
+            <img src="static/img/prueba.jpg" alt="Personas rindiendo la prueba de CI" class="w-full img">
+          </div>
         </div>
       </section>
     </div>
 
     <!-- Footer -->
-    <footer>
-      <div class="footer-container">
+    <footer class="footer">
+      <div class="container">
         <div class="links">
           <div>
             <a href="https://www.mensa.org/" target="_blank" rel="noopener">
@@ -224,14 +244,14 @@
             </a>
           </div>
         </div>
+      </div>
 
-        <div class="copyrigth w-full">
-          <p>&copy; 2025 Mensa Perú.</p>
-        </div>
+      <div class="copyrigth">
+        <p>&copy; 2025 Mensa Perú.</p>
       </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="static/scripts.js"></script>
+    <script src="static/scripts.js?v=2.0"></script>
   </body>
 </html>
