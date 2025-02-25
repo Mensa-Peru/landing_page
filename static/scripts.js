@@ -115,9 +115,11 @@ class ColorSchemeButton {
   }
 
   updateColorScheme() {
-    document.body.setAttribute('data-dark-theme', this.isDarkTheme());
-    this.toggleButtonIcon('.fa-sun', !this.isDarkTheme());
-    this.toggleButtonIcon('.fa-moon', this.isDarkTheme());
+    const isDarkTheme = this.isDarkTheme();
+
+    document.body.setAttribute('data-dark-theme', isDarkTheme);
+    this.toggleButtonIcon('.fa-sun', !isDarkTheme);
+    this.toggleButtonIcon('.fa-moon', isDarkTheme);
   }
 }
 
