@@ -68,33 +68,55 @@ class SlideShow {
 }
 
 class ColorSchemeButton {
+  #isDarkTheme;
+  buttonSelector = '.dark-mode-toggle';
+
   constructor() {
     this.mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const mqScheme = this.mediaQuery.matches ? 'dark' : 'light';
-    this.mediaQuery.addEventListener('change', this.mqSchemeChange.bind(this));
-    this.colorScheme = localStorage.getItem('color-scheme') ?? mqScheme;
 
-    this.buttonElements = document.querySelectorAll('.dark-mode-toggle');
-    this.buttonElements.forEach(button => {
-      button.addEventListener('click', this.buttonToggle.bind(this));
-    });
+    this.updateColorScheme();
 
+    this.mediaQuery.addEventListener('change', this.mqSchemeListener.bind(this));
+    document.addEventListener('click', this.toggleDarkThemeListener.bind(this));
+  }
+
+  isDarkTheme() {
+    if (this.#isDarkTheme == undefined) {
+      this.#isDarkTheme = localStorage.getItem('dark-theme') === 'true' ?? this.mediaQuery.matches;
+    }
+
+    return this.#isDarkTheme;
+  }
+
+  setDarkTheme(value) {
+    this.#isDarkTheme = value;
+    localStorage.setItem('dark-theme', value);
+  }
+
+  toggleButtonIcon(selector, darkTheme) {
+    const icons = document.querySelectorAll(`${this.buttonSelector} ${selector}`);
+
+    icons.forEach(icon => icon.classList.toggle('active', darkTheme));
+  }
+
+  toggleDarkThemeListener(ev) {
+    if (!ev.target.closest(this.buttonSelector)) return;
+
+    ev.preventDefault();
+
+    this.setDarkTheme(!this.isDarkTheme());
     this.updateColorScheme();
   }
 
-  buttonToggle() {
-    this.colorScheme = this.colorScheme === 'dark' ? 'light' : 'dark';
-    this.updateColorScheme();
-  }
-
-  mqSchemeChange() {
-    this.colorScheme = this.mediaQuery.matches ? 'dark' : 'light';
+  mqSchemeListener(ev) {
+    this.setDarkTheme(ev.matches);
     this.updateColorScheme();
   }
 
   updateColorScheme() {
-    localStorage.setItem('color-scheme', this.colorScheme);
-    document.documentElement.setAttribute('data-color-scheme', this.colorScheme);
+    document.body.setAttribute('data-dark-theme', this.isDarkTheme());
+    this.toggleButtonIcon('.fa-sun', !this.isDarkTheme());
+    this.toggleButtonIcon('.fa-moon', this.isDarkTheme());
   }
 }
 
