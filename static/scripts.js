@@ -210,5 +210,8 @@ window.addEventListener('load', () => {
   document.querySelectorAll('.slider').forEach(elem => new SlideShow(elem));
 
   new NavigationManager();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
   ThemeManager.init();
 });
