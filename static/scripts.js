@@ -127,62 +127,91 @@ class ThemeManager {
   }
 }
 
+class NavigationManager {
+  animationDuration = 0;
+  navigationBreakpoint = 1024;
+
+  constructor() {
+    this.setNavbarExpanded(false);
+    this.loadCSSVariables();
+    this.setupListeners();
+  }
+
+  setupListeners() {
+    const navbar = document.querySelector('.navbar');
+    navbar.addEventListener('click', (ev) => {
+      const target = ev.target;
+      if (target.closest('.toggle-button')) {
+        this.toggleNavbar();
+      } else if (target.closest('.overlay')) {
+        this.toggleNavbar(false);
+      } else if (target.closest('.nav-link')) {
+        ev.preventDefault();
+        const targetElem = document.querySelector(target.getAttribute('href'));
+        const navbarHeight = navbar.offsetHeight;
+        const targetTop = targetElem.getBoundingClientRect().top - navbarHeight;
+        const scrollY = window.scrollY + targetTop;
+        window.scrollTo({ top: scrollY, behavior: 'smooth' });
+
+        if (this.isNavbarExpanded()) {
+          this.toggleNavbar(false);
+        }
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < this.navigationBreakpoint || !this.isNavbarExpanded()) return;
+
+      this.setNavbarExpanded(false);
+    });
+  }
+
+  toggleNavbar(expanded) {
+    if (expanded === undefined) expanded = !this.isNavbarExpanded();
+    this.setNavbarExpanded(expanded);
+    this.animateNavbar();
+  }
+
+  setNavbarExpanded(expanded) {
+    document.body.dataset.navbarExpanded = expanded;
+  }
+
+  isNavbarExpanded() {
+    return document.body.dataset.navbarExpanded === "true";
+  }
+
+  animateNavbar() {
+    document.body.dataset.navbarAnimating = "true";
+    setTimeout(() => {
+      document.body.dataset.navbarAnimating = "false";
+    }, this.animationDuration);
+  }
+
+  loadCSSVariables() {
+    const rootStyles = getComputedStyle(document.documentElement);
+    const animationDuration = rootStyles.getPropertyValue('--nav-transition-duration');
+    const breakpoint = rootStyles.getPropertyValue('--nav-breakpoint');
+
+    this.navigationBreakpoint = parseInt(breakpoint) * parseFloat(rootStyles.fontSize);
+    this.animationDuration = parseFloat(animationDuration) * 1000;
+  }
+}
+
 function loadPreloadedStyles() {
   document.querySelectorAll('link[rel="preload"][as="style"]').forEach(link => {
     link.rel = 'stylesheet';
   });
 }
 
-function isNavbarExpanded() {
-  return document.body.dataset.navbarExpanded === 'true';
-}
-
-function toggleMenu(expand) {
-  if (expand === undefined) {
-    expand = !isNavbarExpanded();
-  }
-
-  document.body.dataset.navbarExpanded = expand;
-}
-
-document.addEventListener('click', (ev) => {
-  const target = ev.target.closest('a[href^="#"]');
-
-  if (!target) return;
-
-  ev.preventDefault();
-
-  const targetElem = document.querySelector(target.getAttribute('href'));
-  const navbarHeight = document.querySelector('.navbar').offsetHeight;
-  const targetTop = targetElem.getBoundingClientRect().top - navbarHeight;
-  const scrollY = window.scrollY + targetTop;
-
-  window.scrollTo({ top: scrollY, behavior: 'smooth' });
-});
-
 window.addEventListener('load', () => {
   loadPreloadedStyles();
-
-  const navbar = document.querySelector('.navbar');
-
-  navbar.addEventListener('click', (ev) => {
-    const target = ev.target;
-
-    if (target.closest('.toggle-button, .overlay')) {
-      toggleMenu();
-    } else if (isNavbarExpanded() && target.closest('.nav-link')) {
-      toggleMenu(false);
-    }
-  });
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth < 1024 || !isNavbarExpanded()) return;
-
-    toggleMenu(false);
-  });
 
   // Initialize slideshow
   document.querySelectorAll('.slider').forEach(elem => new SlideShow(elem));
 
+  new NavigationManager();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
   ThemeManager.init();
 });

@@ -3,6 +3,9 @@
 
 /* General Styles */
 :root {
+  --nav-transition-duration: 0.5s;
+  --nav-breakpoint: 64rem;
+
   --blue-gray: #1e1e26;
 
   --font-color: #333333;
@@ -94,8 +97,11 @@ h1, h2, h3, h4, h5, h6, p {
     position: fixed;
     top: 0;
     left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    background-color: rgba(0,0,0,0.4);
     z-index: 1000;
-    transition: background-color .5s;
   }
 
   > .container {
@@ -143,10 +149,11 @@ h1, h2, h3, h4, h5, h6, p {
   width: 15rem;
   max-width: 75%;
   background-color: var(--navbar-bg-color);
-  transition: background-color 0.5s;
+  transition: background-color .5s;
   overflow-x: hidden;
   transform: translateX(100%);
   padding: .5rem 1rem;
+  z-index: 1000;
 
   .theme-toggle {
     display: flex;
@@ -179,13 +186,23 @@ body[data-navbar-expanded="true"] {
   .navbar .overlay {
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.4);
+    opacity: 1;
   }
 
   .navbar-content {
-    transition: transform 0.5s ease;
     transform: translateX(0);
-    z-index: 1000;
+  }
+}
+
+body[data-navbar-animating="true"] {
+  .navbar-content {
+    transition: transform .5s ease;
+  }
+
+  .navbar .overlay {
+    width: 100%;
+    height: 100%;
+    transition: opacity var(--nav-transition-duration) ease;
   }
 }
 
