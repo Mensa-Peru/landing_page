@@ -235,7 +235,9 @@ body[data-navbar-animating="true"] {
 }
 
 /* Sections */
-.services, .meetings {
+.section > .container,
+.services,
+.meetings {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -249,11 +251,8 @@ body[data-navbar-animating="true"] {
 }
 
 .section > .container {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   padding: 4rem 1rem;
-  gap: 2rem;
   font-size: 1.1rem;
 
   > * { flex: 1 1 auto; }
