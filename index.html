@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensa Perú</title>
-    <script src="static/scripts.js?v=2"></script>
+    <script src="static/scripts.js?v=2.0"></script>
     <link rel="icon" href="static/img/favicon-32x32.png" type="image/png">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style">
-    <link rel="stylesheet" href="static/styles.css?v=4">
+    <link rel="stylesheet" href="static/styles.css?v=4.0">
   </head>
   <body data-dark-theme="true">
     <!-- Navigation Bar -->
@@ -36,12 +36,16 @@
               <i class="fa-solid fa-times"></i>
             </button>
           </div>
+
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="#who-we-are">Quiénes somos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#what-we-do">Qué hacemos</a>
+              <a class="nav-link" href="#our-mission">Nuestra misión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#what-we-offer">¿Qué ofrecemos?</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#join-us">Únete a Mensa</a>
@@ -60,9 +64,11 @@
 
     <main>
       <section id="who-we-are" class="section">
-        <div class="container">
+        <div class="container lg-reverse">
           <div class="w-full">
-            <h2>Quiénes somos</h2>
+            <h2 class="section-title">
+              Quiénes somos
+            </h2>
             <p>
               Mensa es la sociedad de alto coeficiente intelectual más grande, antigua y famosa del mundo,
               conformada por alrededor de 150,000 personas altamente inteligentes. Mensa reúne a las
@@ -90,28 +96,34 @@
         </div>
       </section>
 
-      <section id="what-we-do" class="section">
+      <section id="our-mission" class="section">
         <div class="container">
           <div class="w-full">
-            <h2>Qué hacemos</h2>
+            <h2 class="section-title">
+              Nuestra misión
+            </h2>
 
-            <h3>Estimulación intelectual</h3>
             <p>
-              Mensa es un espacio donde se celebra la inteligencia. Compartir conocimiento, juegos
-              de mesa, exposiciones y actividades culturales.
+              Mensa Perú es una sociedad intelectual que busca identificar y reunir a personas con
+              altas capacidades cognitivas, brindándoles un entorno en el que puedan desarrollarse
+              plenamente.
             </p>
 
-            <h3>Comunidades</h3>
-            <p>
-              Los miembros de Mensa son libres de crear comunidades dentro de Mensa. Tenemos comunidades
-              de Juegos de Mesa, Tecnología, Deportes, Viajes, etc.
-            </p>
-
-            <h3>Networking profesional</h3>
-            <p>
-              Eventos de ciencia, emprendimiento e intercambio de ideas. Mensa es un excelente espacio
-              para el intercambio profesional e intelectual.
-            </p>
+            <p class="font-bold">Objetivos:</p>
+            <ul>
+              <li>
+                Detectar a personas con superdotación y ofrecerles un espacio donde puedan interactuar
+                y compartir conocimientos en un ambiente de comprensión y respeto.
+              </li>
+              <li>
+                Difundir información científica actualizada sobre inteligencia, superdotación y su impacto
+                en las diferentes etapas del desarrollo humano.
+              </li>
+              <li>
+                Brindar orientación y recursos tanto a superdotados como a sus familias, promoviendo su
+                bienestar y desarrollo integral.
+              </li>
+            </ul>
           </div>
 
           <div class="w-full">
@@ -130,18 +142,65 @@
         </div>
       </section>
 
-      <section id="join-us" class="section">
+      <section id="what-we-offer" class="section">
         <div class="container">
           <div class="w-full">
-            <h2>Únete a Mensa</h2>
+            <h2 class="text-center">
+              ¿Qué ofrecemos?
+            </h2>
+
+            <div class="services">
+              <div class="w-full">
+                <div class="services-title">
+                  <i class="fa-solid fa-calendar"></i>
+                  <h3>Actividades</h3>
+                </div>
+                <p>
+                  Realizamos actividades para nuestros miembros, como reuniones, charlas, talleres,
+                  salidas y eventos sociales.
+                </p>
+              </div>
+
+              <div class="w-full">
+                <div class="services-title">
+                  <i class="fa-solid fa-comments"></i>
+                  <h3>Grupos de interés</h3>
+                </div>
+                <p>
+                  Tenemos grupos de interés donde nuestros miembros pueden intercambiar, debatir y charlar sobre
+                  temas de su interés.
+                </p>
+              </div>
+
+              <div class="w-full">
+                <div class="services-title">
+                  <i class="fa-solid fa-users"></i>
+                  <h3>Red de contactos</h3>
+                </div>
+                <p>
+                  Mensa Perú es una red de contactos de personas inteligentes y talentosas, con quienes puedes
+                  compartir experiencias y conocimientos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="join-us" class="section">
+        <div class="container lg-reverse">
+          <div class="w-full">
+            <h2 class="section-title">
+              Únete a Mensa
+            </h2>
             <p>
               Para unirte a Mensa necesitas aprobar un examen supervisado de CI, y obtener una calificación
               superior al 98% de la población. Si no estás seguro sobre si calificas, puedes rendir un
               simulacro de la prueba
               <a href="https://test.mensa.no/Home/Test/es"
-                rel="noopener"
-                target="_blank"
-                title="Simulacro de prueba de CI"
+                 rel="noopener"
+                 target="_blank"
+                 title="Simulacro de prueba de CI"
               >
                 aquí
               </a>.
@@ -151,9 +210,9 @@
               avisaremos la fecha y el lugar de la siguiente prueba.
             </p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSc8fsWtX5aEnRuQIURLOTkVpmrkYsPaQfc4MqJlWxlhqtu2yw/viewform?usp=sf_link"
-              class="btn"
-              rel="noopener"
-              target="_blank"
+               class="btn"
+               rel="noopener"
+               target="_blank"
             >
               Inscríbete
             </a>
