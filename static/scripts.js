@@ -146,7 +146,12 @@ class NavigationManager {
       } else if (target.closest('.overlay')) {
         this.toggleNavbar(false);
       } else if (target.closest('.nav-link')) {
+        const targetLink = target.getAttribute('href');
+
+        if (!targetLink.startsWith('#')) return;
+
         ev.preventDefault();
+
         const targetElem = document.querySelector(target.getAttribute('href'));
         const navbarHeight = navbar.offsetHeight;
         const targetTop = targetElem.getBoundingClientRect().top - navbarHeight;
