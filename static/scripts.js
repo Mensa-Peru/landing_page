@@ -148,7 +148,7 @@ class NavigationManager {
       } else if (target.closest('.nav-link')) {
         const targetLink = target.getAttribute('href');
 
-        if (!targetLink.startsWith('#')) return;
+        if (!targetLink.startsWith('#') || targetLink === '#') return;
 
         ev.preventDefault();
 
@@ -215,8 +215,4 @@ window.addEventListener('load', () => {
   document.querySelectorAll('.slider').forEach(elem => new SlideShow(elem));
 
   new NavigationManager();
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  ThemeManager.init();
 });
