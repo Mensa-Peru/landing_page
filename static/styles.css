@@ -459,20 +459,21 @@ body[data-navbar-animating="true"] {
 
 /* Board Members Styles */
 .board-members {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
 .board-member {
+  flex: 1 1 calc(50% - 1.5rem);
   text-align: center;
-  padding: 1.25rem;
-  border-radius: 8px;
+  border-radius: .5rem;
+  padding: 1.25em;
   background: var(--background-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.5s, transform 0.2s;
-  min-height: 260px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -484,8 +485,8 @@ body[data-navbar-animating="true"] {
 }
 
 .member-photo {
-  width: 80px;
-  height: 80px;
+  width: 5em;
+  height: 5em;
   margin: 0 auto 0.75rem;
   border-radius: 50%;
   overflow: hidden;
@@ -509,43 +510,33 @@ body[data-navbar-animating="true"] {
   color: var(--primary-color);
   font-weight: bold;
   margin: 0.25rem 0 0.5rem;
-  text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
 
 .member-description {
   color: var(--font-color);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   line-height: 1.4;
   opacity: 0.8;
   margin-bottom: 0;
 }
 
-@media (min-width: 64rem) {
-  .board-members {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
-
+@media (min-width: 80rem) {
   .board-member {
-    min-height: 300px;
     padding: 1.5rem;
+    flex-basis: calc(25% - 1.5rem);
   }
 
   .member-photo {
-    width: 100px;
-    height: 100px;
+    width: 6.25em;
+    height: 6.25em;
   }
 
   .board-member h3 {
     font-size: 1.1rem;
   }
 
-  .member-position {
-    font-size: 0.85rem;
-  }
-
   .member-description {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
 }
