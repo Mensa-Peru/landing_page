@@ -6,14 +6,15 @@
   --nav-breakpoint: 64rem;
 
   --blue-gray: #1e1e26;
+  --primary-color: #011167;
 
   --font-color: #333333;
   --link-color: #0061c9;
   --background-color: #ffffff;
   --navbar-bg-color: #ffffff;
-  --navbar-font-color: #011167;
+  --navbar-font-color: var(--primary-color);
   --content-even-bg-color: #efefef;
-  --button-bg: #011167;
+  --button-bg: var(--primary-color);
 }
 
 * {
@@ -30,6 +31,7 @@ body {
   transition: color 0.5s, background-color 0.5s;
 
   &[data-dark-theme="true"] {
+    --primary-color: #3597ff;
     --font-color: #ffffff;
     --link-color: #3597ff;
     --background-color: #2d2d2d;
@@ -452,5 +454,89 @@ body[data-navbar-animating="true"] {
   .section > .container {
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+}
+
+/* Board Members Styles */
+.board-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.board-member {
+  flex: 1 1 calc(50% - 1.5rem);
+  text-align: center;
+  border-radius: .5rem;
+  padding: 1.25em;
+  background: var(--background-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.member-photo {
+  width: 5em;
+  height: 5em;
+  margin: 0 auto 0.75rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--primary-color);
+}
+
+.member-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.board-member h3 {
+  margin: 0.25rem 0;
+  color: var(--font-color);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.member-position {
+  color: var(--primary-color);
+  font-weight: bold;
+  margin: 0.25rem 0 0.5rem;
+  font-size: 0.85rem;
+}
+
+.member-description {
+  color: var(--font-color);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  opacity: 0.8;
+  margin-bottom: 0;
+}
+
+@media (min-width: 80rem) {
+  .board-member {
+    padding: 1.5rem;
+    flex-basis: calc(25% - 1.5rem);
+  }
+
+  .member-photo {
+    width: 6.25em;
+    height: 6.25em;
+  }
+
+  .board-member h3 {
+    font-size: 1.1rem;
+  }
+
+  .member-description {
+    font-size: 0.75rem;
   }
 }
