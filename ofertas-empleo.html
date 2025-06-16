@@ -46,23 +46,32 @@
           </div>
 
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#who-we-are">Nosotros</a>
+            <li class="nav-item dropdown">
+              <span class="dropdown-toggle" role="button">
+                Sobre Nosotros
+                <i class="dropdown-icon fa-solid fa-chevron-down"></i>
+              </span>
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#who-we-are">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#our-mission">Misión</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="consejo-directivo.html">Directiva</a>
+                </li>
+              </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#our-mission">Misión</a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="index.html#what-we-offer">¿Qué ofrecemos?</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="consejo-directivo.html">Directiva</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Empleos</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="index.html#join-us">Únete</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ofertas-empleo.html">Empleos</a>
             </li>
           </ul>
         </div>
@@ -78,48 +87,34 @@
 
     <main>
       <section id="job-intro" class="section">
-        <div class="container">
+        <div class="container lg-reverse">
           <div class="w-full">
-            <h2 class="section-title">
-              Publica tu Oferta de Empleo
-            </h2>
+            <h1 class="section-title">
+              Ofertas de Empleo
+            </h1>
             <p>
-              Si representas a una empresa que busca profesionales con altas capacidades 
-              intelectuales, puedes publicar tu oferta de empleo a través de nuestro formulario.
+              Mensa Perú es una comunidad de personas con altas capacidades intelectuales.
+              Si tu empresa busca talento excepcional, te invitamos a publicar tus ofertas
+              de empleo para que nuestros miembros puedan conocerlas y postularse.
+            </p>
+            <p>
+              Las ofertas de empleo se comparten exclusivamente con nuestros miembros a través de
+              nuestros canales internos de comunicación.
+            </p>
+            <p class="text-center">
+              <a href="https://forms.gle/sugsh3ee974wcWaY9"
+                class="btn"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-solid fa-external-link-alt"></i>
+                Enviar Oferta
+              </a>
             </p>
           </div>
+
           <div class="w-full">
-            <div class="form-icon">
-              <i class="fa-solid fa-briefcase"></i>
-            </div>
-
-            <ul class="benefits-list">
-              <li>
-                <i class="fa-solid fa-check"></i>
-                Acceso a una red de profesionales altamente capacitados
-              </li>
-              <li>
-                <i class="fa-solid fa-check"></i>
-                Candidatos con CI superior al 98% de la población
-              </li>
-              <li>
-                <i class="fa-solid fa-check"></i>
-                Perfiles diversos: ingenieros, científicos, educadores y más
-              </li>
-              <li>
-                <i class="fa-solid fa-check"></i>
-                Proceso de publicación gratuito para miembros
-              </li>
-            </ul>
-
-            <a href="https://forms.gle/sugsh3ee974wcWaY9" 
-               class="btn form-button"
-               target="_blank"
-               rel="noopener"
-            >
-              <i class="fa-solid fa-external-link-alt"></i>
-              Abrir Formulario
-            </a>
+            <img src="static/img/job-offers-banner.png" alt="Ofertas de Empleo en Mensa Perú" class="w-full">
           </div>
         </div>
       </section>
