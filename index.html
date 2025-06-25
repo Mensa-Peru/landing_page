@@ -15,7 +15,7 @@
 
       gtag('config', 'G-36NY3N7VE3');
     </script>
-    <script src="static/scripts.js?v=2.0"></script>
+    <script src="static/scripts.js?v=3.0"></script>
   </head>
   <body data-dark-theme="true">
     <!-- Navigation Bar -->
@@ -46,20 +46,32 @@
           </div>
 
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#who-we-are">Nosotros</a>
+            <li class="nav-item dropdown">
+              <span class="dropdown-toggle" role="button">
+                Sobre Nosotros
+                <i class="dropdown-icon fa-solid fa-chevron-down"></i>
+              </span>
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="#who-we-are">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#our-mission">Misión</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="consejo-directivo.html">Directiva</a>
+                </li>
+              </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#our-mission">Misión</a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="#what-we-offer">¿Qué ofrecemos?</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="consejo-directivo.html">Directiva</a>
+              <a class="nav-link" href="#join-us">Únete</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#join-us">Únete</a>
+              <a class="nav-link" href="ofertas-empleo.html">Empleos</a>
             </li>
           </ul>
         </div>
@@ -292,5 +304,9 @@
         <p>&copy; 2025 Mensa Perú.</p>
       </div>
     </footer>
+
+    <script>
+      ThemeManager.init();
+    </script>
   </body>
 </html>
