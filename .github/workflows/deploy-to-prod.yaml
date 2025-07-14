@@ -23,9 +23,9 @@ jobs:
 
       - name: Deploy using rsync over SSH
         run: |
-          rsync -avz --delete \
+          rsync -avz --delete --ignore-errors \
             -e "ssh -i ~/.ssh/id_ed25519 -p 2213" \
-            *.html static/ ubuntu@mensa.pe:/var/www/html
+            *.html static ubuntu@mensa.pe:/var/www/html
 
       - name: Reload Nginx on server
         run: |
