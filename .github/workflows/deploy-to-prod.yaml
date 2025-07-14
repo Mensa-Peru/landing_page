@@ -19,15 +19,15 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.PRODUCTION_SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -H mensa.pe >> ~/.ssh/known_hosts
+          ssh-keyscan -p 2213 -H mensa.pe >> ~/.ssh/known_hosts
 
       - name: Deploy using rsync over SSH
         run: |
           rsync -avz --delete \
-            -e "ssh -i ~/.ssh/id_ed25519" \
+            -e "ssh -i ~/.ssh/id_ed25519 -p 2213" \
             *.html static/ ubuntu@mensa.pe:/var/www/html
 
       - name: Reload Nginx on server
         run: |
-          ssh -i ~/.ssh/id_ed25519 ubuntu@mensa.pe \
+          ssh -i ~/.ssh/id_ed25519 -p 2213 ubuntu@mensa.pe \
             'sudo systemctl reload nginx'
