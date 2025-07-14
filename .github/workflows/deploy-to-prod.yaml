@@ -30,4 +30,4 @@ jobs:
       - name: Reload Nginx on server
         run: |
           ssh -i ~/.ssh/id_ed25519 -p 2213 ubuntu@mensa.pe \
-            'sudo systemctl reload nginx'
+            'sudo /usr/bin/systemctl reload nginx'
