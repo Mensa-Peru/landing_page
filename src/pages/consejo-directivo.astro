@@ -1,0 +1,129 @@
+---
+import Layout from "../layouts/Layout.astro"
+
+import lucioSeikei from "../assets/images/consejo-directivo/lucio-seikei.jpg"
+import davidLira from "../assets/images/consejo-directivo/david-lira.jpg"
+import oscarMelo from "../assets/images/consejo-directivo/oscar-melo.jpg"
+import lysseteBueno from "../assets/images/consejo-directivo/lyssete-bueno.jpg"
+import mensaGrupo1 from "../assets/images/mensa-grupo-1.jpg"
+import mensaGrupo2 from "../assets/images/mensa-grupo-2.jpg"
+---
+
+<Layout>
+  <section id="board-intro" class="section">
+    <div class="container">
+      <div class="w-full">
+        <h1 class="section-title text-center">
+          Consejo Directivo
+        </h1>
+        <p class="text-center">
+          El Consejo Directivo de Mensa Perú está conformado por miembros comprometidos con la
+          misión de nuestra organización, elegidos democráticamente por la asamblea general
+          de miembros.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="board-members" class="section">
+    <div class="container">
+      <div class="w-full">
+        <h2 class="section-title">
+          Miembros del Consejo
+        </h2>
+
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="member-photo">
+              <img src={lucioSeikei.src} alt="Lucio Seikei Cámara Yoshimoto" class="member-img">
+            </div>
+            <h3>Lucio Seikei Cámara Yoshimoto</h3>
+            <p class="member-position">Presidente</p>
+            <p class="member-description">
+              <a href="mailto:seikei.camara@member.mensa.org">seikei.camara@member.mensa.org</a>
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="member-photo">
+              <img src={davidLira.src} alt="David Lira Mamani" class="member-img">
+            </div>
+            <h3>David Lira Mamani</h3>
+            <p class="member-position">Vicepresidente</p>
+            <p class="member-description">
+              <a href="mailto:david.lira@member.mensa.org">david.lira@member.mensa.org</a>
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="member-photo">
+              <img src={oscarMelo.src} alt="Oscar Melo-Vega Angeles" class="member-img">
+            </div>
+            <h3>Oscar Melo-Vega Angeles</h3>
+            <p class="member-position">Secretario</p>
+            <p class="member-description">
+              <a href="mailto:oscar.melovega@member.mensa.org">oscar.melovega@member.mensa.org</a>
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="member-photo">
+              <img src={lysseteBueno.src} alt="Lyssete Bueno Murga" class="member-img">
+            </div>
+            <h3>Lyssete Bueno Murga</h3>
+            <p class="member-position">Tesorera</p>
+            <p class="member-description">
+              <a href="mailto:lyssete.bueno@member.mensa.org">lyssete.bueno@member.mensa.org</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="organization" class="section">
+    <div class="container lg-reverse">
+      <div class="w-full">
+        <h2 class="section-title">
+          Estructura Organizacional
+        </h2>
+        <p>
+          Mensa Perú se rige por un consejo directivo elegido cada dos años por la
+          asamblea general de miembros. Nuestro funcionamiento se basa en los principios
+          de transparencia, democracia y participación.
+        </p>
+        <p class="font-bold">Funciones principales:</p>
+        <ul>
+          <li>
+            Definir las estrategias y políticas de la organización en concordancia con
+            los estatutos de Mensa Internacional.
+          </li>
+          <li>
+            Supervisar la gestión administrativa, financiera y operativa de Mensa Perú.
+          </li>
+          <li>
+            Promover el crecimiento y desarrollo de la comunidad de miembros.
+          </li>
+          <li>
+            Mantener relaciones institucionales con Mensa Internacional y otras 
+            organizaciones afines.
+          </li>
+        </ul>
+      </div>
+
+      <div class="w-full">
+        <div class="slider" id="slider-1">
+          <div class="slides">
+            <img src={mensaGrupo1.src} alt="Consejo Directivo 1" class="active">
+            <img src={mensaGrupo2.src} alt="Consejo Directivo 2">
+          </div>
+
+          <div class="navigation">
+            <button type="button" class="prev">&#10094;</button>
+            <button type="button" class="next">&#10095;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
