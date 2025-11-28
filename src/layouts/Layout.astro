@@ -13,7 +13,7 @@ import Navbar from "../components/Navbar.astro"
     <title>Mensa Perú</title>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-36NY3N7VE3"></script>
-    <script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -25,68 +25,68 @@ import Navbar from "../components/Navbar.astro"
   <body data-dark-theme="true">
     <Navbar />
 
-    <main>
+    <main class="main-container">
       <slot />
+
+      <footer class="footer">
+        <div class="container">
+          <div class="links">
+            <div>
+              <a href="https://www.mensa.org/" target="_blank" rel="noopener">
+                Mensa Internacional
+              </a>
+            </div>
+            <div>
+              <a href="mailto:info@mensa.pe">
+                Contacto
+              </a>
+            </div>
+            <div>
+              <a href="https://portal.mensa.pe/" target="_blank" rel="noopener">
+                Acceso Miembros
+              </a>
+            </div>
+          </div>
+
+          <div class="social-media">
+            <div>
+              <a href="https://facebook.com/Mensa.Peru/"
+                 target="_blank"
+                 rel="noopener"
+                 title="Síguenos en Facebook"
+              >
+                <i class="fab fa-facebook fa-2x"></i>
+              </a>
+            </div>
+
+            <div>
+              <a href="https://www.linkedin.com/company/mensa-per%C3%BA/"
+                 target="_blank"
+                 rel="noopener"
+                 title="Síguenos en LinkedIn"
+              >
+                <i class="fab fa-linkedin fa-2x"></i>
+              </a>
+            </div>
+
+            <div>
+              <a href="https://github.com/Mensa-Peru/"
+                 target="_blank"
+                 rel="noopener"
+                 title="Síguenos en GitHub"
+              >
+                <i class="fab fa-github fa-2x"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyrigth">
+          <p>&copy; 2025 Mensa Perú.</p>
+        </div>
+      </footer>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="links">
-          <div>
-            <a href="https://www.mensa.org/" target="_blank" rel="noopener">
-              Mensa Internacional
-            </a>
-          </div>
-          <div>
-            <a href="mailto:info@mensa.pe">
-              Contacto
-            </a>
-          </div>
-          <div>
-            <a href="https://portal.mensa.pe/" target="_blank" rel="noopener">
-              Acceso Miembros
-            </a>
-          </div>
-        </div>
-
-        <div class="social-media">
-          <div>
-            <a href="https://facebook.com/Mensa.Peru/"
-               target="_blank"
-               rel="noopener"
-               title="Síguenos en Facebook"
-            >
-              <i class="fab fa-facebook fa-2x"></i>
-            </a>
-          </div>
-
-          <div>
-            <a href="https://www.linkedin.com/company/mensa-per%C3%BA/"
-               target="_blank"
-               rel="noopener"
-               title="Síguenos en LinkedIn"
-            >
-              <i class="fab fa-linkedin fa-2x"></i>
-            </a>
-          </div>
-
-          <div>
-            <a href="https://github.com/Mensa-Peru/"
-               target="_blank"
-               rel="noopener"
-               title="Síguenos en GitHub"
-            >
-              <i class="fab fa-github fa-2x"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="copyrigth">
-        <p>&copy; 2025 Mensa Perú.</p>
-      </div>
-    </footer>
     <script is:inline>
       function isDarkTheme() {
         const storedValue = localStorage.getItem("dark-theme")

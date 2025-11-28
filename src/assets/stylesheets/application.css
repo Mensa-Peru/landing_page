@@ -23,10 +23,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: 'Open Sans', sans-serif;
   color: var(--font-color);
@@ -94,8 +90,7 @@ ul {
 
 /* Navigation Bar */
 .navbar {
-  position: sticky;
-  top: 0;
+  height: 5.5rem;
   background-color: var(--navbar-bg-color);
   transition: background-color 0.5s;
   color: var(--navbar-font-color);
@@ -207,6 +202,12 @@ body[data-navbar-animating="true"] {
     height: 100%;
     transition: opacity var(--nav-transition-duration) ease;
   }
+}
+
+.main-container {
+  height: calc(100vh - 5.5rem);
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 @media (min-width: 28rem) {
