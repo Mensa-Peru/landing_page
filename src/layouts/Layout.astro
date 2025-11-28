@@ -20,7 +20,7 @@ import logoMensa from "../assets/images/logo-mensa-peru.png"
 
       gtag('config', 'G-36NY3N7VE3');
     </script>
-		<script src="../assets/javascript/application.js"></script>
+    <script src="../assets/javascript/application.js"></script>
   </head>
   <body data-dark-theme="true">
     <!-- Navigation Bar -->
@@ -58,22 +58,22 @@ import logoMensa from "../assets/images/logo-mensa-peru.png"
               </span>
               <ul class="dropdown-menu">
                 <li class="nav-item">
-                  <a class="nav-link" href="#who-we-are">Nosotros</a>
+                  <a class="nav-link" href="/#who-we-are">Nosotros</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#our-mission">Misión</a>
+                  <a class="nav-link" href="/#our-mission">Misión</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="consejo-directivo.html">Directiva</a>
+                  <a class="nav-link" href="/consejo-directivo">Directiva</a>
                 </li>
               </ul>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#what-we-offer">¿Qué ofrecemos?</a>
+              <a class="nav-link" href="/#what-we-offer">¿Qué ofrecemos?</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#join-us">Únete</a>
+              <a class="nav-link" href="/#join-us">Únete</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="ofertas-empleo.html">Empleos</a>
@@ -91,8 +91,8 @@ import logoMensa from "../assets/images/logo-mensa-peru.png"
     </nav>
 
     <main>
-			<slot />
-		</main>
+      <slot />
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -152,16 +152,16 @@ import logoMensa from "../assets/images/logo-mensa-peru.png"
         <p>&copy; 2025 Mensa Perú.</p>
       </div>
     </footer>
-		<script>
-			function isDarkTheme() {
-				const storedValue = localStorage.getItem("dark-theme")
-				const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
-				const isDark = storedValue || mediaQuery.matches
+    <script is:inline>
+      function isDarkTheme() {
+        const storedValue = localStorage.getItem("dark-theme")
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+        const isDark = storedValue || mediaQuery.matches
 
-				return isDark
-			}
+        return isDark
+      }
 
-			document.body.setAttribute('data-dark-theme', isDarkTheme())
-		</script>
+      document.body.setAttribute('data-dark-theme', isDarkTheme())
+    </script>
   </body>
 </html>
