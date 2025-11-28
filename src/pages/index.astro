@@ -1,11 +1,170 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro"
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import mensaGrupo1 from "../assets/images/mensa-grupo-1.jpg"
+import mensaGrupo2 from "../assets/images/mensa-grupo-2.jpg"
+import social1 from "../assets/images/social-1.jpg"
+import social2 from "../assets/images/social-2.jpg"
+import prueba from "../assets/images/prueba.jpg"
 ---
 
 <Layout>
-	<Welcome />
+	<section id="who-we-are" class="section">
+    <div class="container lg-reverse">
+      <div class="w-full">
+        <h2 class="section-title">
+          Quiénes somos
+        </h2>
+        <p>
+          Mensa es la sociedad de alto coeficiente intelectual más grande, antigua y famosa del mundo,
+          conformada por alrededor de 150,000 personas altamente inteligentes. Mensa reúne a las
+          personas con un CI superior al 98% de la población.
+        </p>
+        <p>
+          Mensa Perú es el grupo reconocido por Mensa Internacional para nuestro país. ¡Hoy somos
+          más de 150 miembros y seguimos creciendo!
+        </p>
+      </div>
+
+      <div class="w-full">
+        <div class="slider" id="slider-1">
+          <div class="slides">
+            <img src={mensaGrupo1.src} alt="Reunión de Mensa 1" class="active">
+            <img src={mensaGrupo2.src} alt="Reunión de Mensa 2">
+          </div>
+
+          <div class="navigation">
+            <button type="button" class="prev">&#10094;</button>
+            <button type="button" class="next">&#10095;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="our-mission" class="section">
+    <div class="container">
+      <div class="w-full">
+        <h2 class="section-title">
+          Nuestra misión
+        </h2>
+
+        <p>
+          Mensa Perú es una sociedad intelectual que busca identificar y reunir a personas con
+          altas capacidades cognitivas, brindándoles un entorno en el que puedan desarrollarse
+          plenamente.
+        </p>
+
+        <p class="font-bold">Objetivos:</p>
+        <ul>
+          <li>
+            Detectar a personas con superdotación y ofrecerles un espacio donde puedan interactuar
+            y compartir conocimientos en un ambiente de comprensión y respeto.
+          </li>
+          <li>
+            Difundir información científica actualizada sobre inteligencia, superdotación y su impacto
+            en las diferentes etapas del desarrollo humano.
+          </li>
+          <li>
+            Brindar orientación y recursos tanto a superdotados como a sus familias, promoviendo su
+            bienestar y desarrollo integral.
+          </li>
+        </ul>
+      </div>
+
+      <div class="w-full">
+        <div class="slider" id="slider-2">
+          <div class="slides">
+            <img src={social1.src} alt="Fraternidad en Mensa 1" class="active">
+            <img src={social2.src} alt="Fraternidad en Mensa 2">
+          </div>
+
+          <div class="navigation">
+            <button type="button" class="prev">&#10094;</button>
+            <button type="button" class="next">&#10095;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="what-we-offer" class="section">
+    <div class="container">
+      <div class="w-full">
+        <h2 class="text-center">
+          ¿Qué ofrecemos?
+        </h2>
+
+        <div class="services">
+          <div class="w-full">
+            <div class="services-title">
+              <i class="fa-solid fa-calendar"></i>
+              <h3>Actividades</h3>
+            </div>
+            <p>
+              Realizamos actividades para nuestros miembros, como reuniones, charlas, talleres,
+              salidas y eventos sociales.
+            </p>
+          </div>
+
+          <div class="w-full">
+            <div class="services-title">
+              <i class="fa-solid fa-comments"></i>
+              <h3>Grupos de interés</h3>
+            </div>
+            <p>
+              Tenemos grupos de interés donde nuestros miembros pueden intercambiar, debatir y charlar sobre
+              temas de su interés.
+            </p>
+          </div>
+
+          <div class="w-full">
+            <div class="services-title">
+              <i class="fa-solid fa-users"></i>
+              <h3>Red de contactos</h3>
+            </div>
+            <p>
+              Mensa Perú es una red de contactos de personas inteligentes y talentosas, con quienes puedes
+              compartir experiencias y conocimientos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="join-us" class="section">
+    <div class="container lg-reverse">
+      <div class="w-full">
+        <h2 class="section-title">
+          Únete a Mensa
+        </h2>
+        <p>
+          Nuestros miembros tienen distintos perfiles: estudiantes, profesionales, científicos, maestros
+            y mucho más. Admitimos a personas de cualquier edad, nivel educativo y socioeconómico, con el
+            único criterio de tener un CI superior al 98% de la población. 
+        </p>
+        <p>
+          Tomamos pruebas de CI periódicamente en Lima. ¡Inscríbete en la prueba y únete a Mensa Perú!
+        </p>
+        <p>
+          <a href="https://forms.gle/Yb9SaB6uskv9yefH7"
+            class="btn"
+            rel="noopener"
+            target="_blank"
+          >
+            Inscríbete
+          </a>
+        </p>
+        <p>
+          Puedes rendir un simulacro de la prueba
+          <a href="https://test.mensa.no/Home/Test/es" rel="noopener" target="_blank" title="Simulacro de prueba de CI">aquí</a>.
+        </p>
+      </div>
+
+      <div class="w-full">
+        <img src={prueba.src} alt="Personas rindiendo la prueba de CI" class="w-full img">
+      </div>
+    </div>
+  </section>
 </Layout>
