@@ -2,6 +2,8 @@
 import "../assets/stylesheets/application.css"
 
 import Navbar from "../components/Navbar.astro"
+
+import favicon from "../assets/images/favicon-32x32.png"
 ---
 
 <!DOCTYPE html>
@@ -9,7 +11,7 @@ import Navbar from "../components/Navbar.astro"
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="static/img/favicon-32x32.png" type="image/png">
+    <link rel="icon" href={favicon.src} type="image/png">
     <title>Mensa Perú</title>
     <link rel="preload" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-36NY3N7VE3"></script>
