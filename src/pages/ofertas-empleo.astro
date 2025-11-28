@@ -1,0 +1,104 @@
+---
+import Layout from "../layouts/Layout.astro"
+
+import jobOffersBanner from "../assets/images/job-offers-banner.png"
+---
+
+<Layout>
+  <section id="job-intro" class="section">
+    <div class="container lg-reverse">
+      <div class="w-full">
+        <h1 class="section-title">
+          Ofertas de Empleo
+        </h1>
+        <p>
+          Mensa Perú es una comunidad de personas con altas capacidades intelectuales.
+          Si tu empresa busca talento excepcional, te invitamos a publicar tus ofertas
+          de empleo para que nuestros miembros puedan conocerlas y postularse.
+        </p>
+        <p>
+          Las ofertas de empleo se comparten exclusivamente con nuestros miembros a través de
+          nuestros canales internos de comunicación.
+        </p>
+        <p class="text-center">
+          <a href="https://forms.gle/sugsh3ee974wcWaY9"
+             class="btn"
+             target="_blank"
+             rel="noopener"
+          >
+            <i class="fa-solid fa-external-link-alt"></i>
+            Enviar Oferta
+          </a>
+        </p>
+      </div>
+
+      <div class="w-full">
+        <img src={jobOffersBanner.src} alt="Ofertas de Empleo en Mensa Perú" class="w-full">
+      </div>
+    </div>
+  </section>
+
+  <section id="job-info" class="section">
+    <div class="container">
+      <div class="w-full">
+        <h2 class="text-center">
+          Información Adicional
+        </h2>
+
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h3>Para Empleadores</h3>
+            <p>
+              Las ofertas de empleo se comparten exclusivamente con nuestros miembros 
+              a través de nuestros canales internos de comunicación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fa-solid fa-shield-alt"></i>
+            </div>
+            <h3>Proceso de Revisión</h3>
+            <p>
+              Todas las ofertas son revisadas por nuestro equipo antes de ser 
+              publicadas para garantizar su legitimidad y relevancia.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <h3>Tiempo de Respuesta</h3>
+            <p>
+              Las ofertas aprobadas se publican en un plazo de 3-5 días hábiles 
+              después de su envío.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-jobs" class="section">
+    <div class="container">
+      <div class="w-full">
+        <h2 class="text-center">
+          ¿Tienes Preguntas?
+        </h2>
+        <p class="text-center">
+          Si necesitas más información sobre el proceso de publicación de ofertas de empleo:
+        </p>
+        <p class="text-center">
+          <a href="mailto:info@mensa.pe" class="btn">
+            <i class="fa-solid fa-envelope"></i>
+            Contáctanos
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
