@@ -30,17 +30,7 @@ export default class {
       } else if (target.closest('.nav-link')) {
         const targetLink = target.getAttribute('href')
 
-        if (!targetLink.startsWith('#') || targetLink === '#') return
-
-        ev.preventDefault()
-
-        const targetElem = document.querySelector(target.getAttribute('href'))
-        const navbarHeight = this.navbar.offsetHeight
-        const targetTop = targetElem.getBoundingClientRect().top - navbarHeight
-        const scrollY = window.scrollY + targetTop
-        window.scrollTo({ top: scrollY, behavior: 'smooth' })
-
-        if (this.isNavbarExpanded()) {
+        if (targetLink.includes('#') && this.isNavbarExpanded()) {
           this.toggleNavbar(false)
         }
       }
