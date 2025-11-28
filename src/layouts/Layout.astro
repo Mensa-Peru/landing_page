@@ -23,6 +23,18 @@ import Navbar from "../components/Navbar.astro"
     <script src="../assets/javascript/application.js"></script>
   </head>
   <body data-dark-theme="true">
+    <script is:inline>
+      function isDarkTheme() {
+        const storedValue = localStorage.getItem("dark-theme")
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+        const isDark = storedValue || mediaQuery.matches
+
+        return isDark
+      }
+
+      document.body.setAttribute('data-dark-theme', isDarkTheme())
+    </script>
+
     <Navbar />
 
     <main class="main-container">
@@ -86,17 +98,5 @@ import Navbar from "../components/Navbar.astro"
         </div>
       </footer>
     </main>
-
-    <script is:inline>
-      function isDarkTheme() {
-        const storedValue = localStorage.getItem("dark-theme")
-        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
-        const isDark = storedValue || mediaQuery.matches
-
-        return isDark
-      }
-
-      document.body.setAttribute('data-dark-theme', isDarkTheme())
-    </script>
   </body>
 </html>
