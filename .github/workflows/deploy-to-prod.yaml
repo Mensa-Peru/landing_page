@@ -14,6 +14,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Use the Node version from .nvmrc
+        run: echo "NODE_VERSION=$(cat .nvmrc)" >> $GITHUB_ENV
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies and build site
+        run: npm ci && npm run build
+
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
@@ -25,7 +37,7 @@ jobs:
         run: |
           rsync -avz --delete --ignore-errors \
             -e "ssh -i ~/.ssh/id_ed25519 -p 2213" \
-            *.html static ubuntu@mensa.pe:/var/www/html
+            dist/ ubuntu@mensa.pe:/var/www/html
 
       - name: Reload Nginx on server
         run: |
